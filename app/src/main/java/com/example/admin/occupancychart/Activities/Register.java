@@ -101,7 +101,7 @@ public class Register extends AppCompatActivity {
             public void onClick(View v) {
                 nameedit.setVisibility(View.VISIBLE);
                 rollname.setVisibility(View.GONE);
-
+                nameedit.setHint("Roll number");
                 studclick = true;
                 teacherclick= false;
                 inchargeclick = false;
@@ -114,7 +114,6 @@ public class Register extends AppCompatActivity {
         Teacher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //nameedit.setHint("Full Name");
                 nameedit.setVisibility(View.GONE);
                 getTeachers();
                 rollname.setVisibility(View.VISIBLE);
@@ -130,6 +129,7 @@ public class Register extends AppCompatActivity {
         Incharge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                nameedit.setHint("Full Name");
                 nameedit.setVisibility(View.VISIBLE);
                 rollname.setVisibility(View.GONE);
                 inchargeclick = true;
@@ -236,7 +236,7 @@ public void getTeachers()
                 //Getting the instance of AutoCompleteTextView
                 rollname.setThreshold(1);//will start working from first character
                 rollname.setAdapter(adapter);//setting the adapter data into the AutoCompleteTextView
-                rollname.setTextColor(Color.RED);
+                rollname.setTextColor(Color.WHITE);
             }
         }
     }, new Response.ErrorListener() {
