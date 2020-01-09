@@ -779,6 +779,8 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen activity_horizontal_margin
+dimen activity_vertical_margin
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -946,6 +948,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable animation
 drawable avd_hide_password
 drawable avd_show_password
 drawable confirm_password
@@ -956,6 +959,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable email
+drawable gard2
 drawable grad1
 drawable grad3
 drawable grad4
@@ -991,6 +995,7 @@ id InChargeSelect
 id META
 id NameEdit
 id PasswordEdit
+id RegisterTxt
 id SHIFT
 id SYM
 id SignUpBtn
@@ -1104,6 +1109,8 @@ id line3
 id linear
 id listMode
 id list_item
+id loading
+id login
 id masked
 id media_actions
 id message
@@ -1123,6 +1130,7 @@ id parallax
 id parent
 id parentPanel
 id parent_matrix
+id password
 id percent
 id pin
 id progress_circular
@@ -1135,6 +1143,7 @@ id right
 id right_icon
 id right_side
 id right_to_left
+id rollName
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1204,6 +1213,7 @@ id tvYMax
 id uniform
 id up
 id useLogo
+id username
 id viewGithub
 id view_offset_helper
 id visible

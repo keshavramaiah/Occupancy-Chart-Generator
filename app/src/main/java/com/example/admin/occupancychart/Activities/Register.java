@@ -1,12 +1,16 @@
 package com.example.admin.occupancychart.Activities;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -27,12 +31,15 @@ import java.util.Map;
 
 public class Register extends AppCompatActivity {
     private Button signup;
+    private String[] teachers;
+    private AutoCompleteTextView rollname;
     private String name, email, password,confirmpassword,location;
     private EditText emailedit,passwordedit,nameedit,passconfirmedit;
     private TextView alreadyuser,student,Teacher,Incharge;
     private boolean studclick,teacherclick,inchargeclick;
     private SharedPreferences pref ;
     private SharedPreferences.Editor editor ;
+    ProgressDialog dialog;
     private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +48,13 @@ public class Register extends AppCompatActivity {
         studclick= true;
         teacherclick=false;
         inchargeclick= false;
+        dialog= new ProgressDialog(Register.this);
         student = findViewById(R.id.StudentSelect);
         Teacher = findViewById(R.id.TeacherSelect);
         Incharge = findViewById(R.id.InChargeSelect);
         signup = findViewById(R.id.SignUpBtn);
+        rollname = findViewById(R.id.rollName);
+        rollname.setVisibility(View.GONE);
         nameedit = (EditText)findViewById(R.id.NameEdit);
         emailedit = (EditText)findViewById(R.id.EmailEdit);
         passwordedit = (EditText)findViewById(R.id.PasswordEdit);
@@ -89,7 +99,9 @@ public class Register extends AppCompatActivity {
         student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nameedit.setHint("Roll No");
+                nameedit.setVisibility(View.VISIBLE);
+                rollname.setVisibility(View.GONE);
+
                 studclick = true;
                 teacherclick= false;
                 inchargeclick = false;
@@ -102,7 +114,10 @@ public class Register extends AppCompatActivity {
         Teacher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nameedit.setHint("Full Name");
+                //nameedit.setHint("Full Name");
+                nameedit.setVisibility(View.GONE);
+                getTeachers();
+                rollname.setVisibility(View.VISIBLE);
                 teacherclick = true;
                 studclick= false;
                 inchargeclick = false;
@@ -115,7 +130,8 @@ public class Register extends AppCompatActivity {
         Incharge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nameedit.setHint("Full Name");
+                nameedit.setVisibility(View.VISIBLE);
+                rollname.setVisibility(View.GONE);
                 inchargeclick = true;
                 studclick = false;
                 teacherclick= false;
@@ -196,37 +212,53 @@ public class Register extends AppCompatActivity {
         MySingleton.getInstance(getApplicationContext()).addToRequestQueue(request);
 
     }
-//    public void showChangeLangDialog() {
-//        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-//        LayoutInflater inflater = this.getLayoutInflater();
-//        final View dialogView = inflater.inflate(R.layout.popup, null);
-//        dialogBuilder.setView(dialogView);
-//
-//        final EditText edt = (EditText) dialogView.findViewById(R.id.edt_comment);
-//
-//        dialogBuilder.setTitle("Add location");
-//        dialogBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
-//            public void onClick(DialogInterface dialog, int whichButton) {
-//                if (edt.getText().toString().length() > 0) {
-//                    location = edt.getText().toString().trim();
-//                    editor.putString("location", location);
-//                    editor.commit();
-//                    insertnewuser();
-//                } else {
-//                    showChangeLangDialog();
-//                    Toast.makeText(getApplicationContext(),"Enter a  location to proceed",Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-//        dialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//            public void onClick(DialogInterface dialog, int whichButton) {
-//                //pass
-//                signup.setEnabled(true);
-//            }
-//        });
-//        AlertDialog b = dialogBuilder.create();
-//        b.show();
-//    }
+public void getTeachers()
+{
+    dialog.setMessage("Getting list of teachers, please wait.");
+    dialog.show();
+
+    StringRequest request = new StringRequest(Request.Method.POST, Constants.TEACHER_URL, new Response.Listener<String>() {
+        @Override
+        public void onResponse(String response) {
+            if (dialog.isShowing())
+                dialog.dismiss();
+
+            //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
+            String rep =  response.toString();
+            if (rep.contains("Error"))
+            {
+
+            }
+            else
+            {
+                teachers = rep.split(",");
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.select_dialog_item, teachers);
+                //Getting the instance of AutoCompleteTextView
+                rollname.setThreshold(1);//will start working from first character
+                rollname.setAdapter(adapter);//setting the adapter data into the AutoCompleteTextView
+                rollname.setTextColor(Color.RED);
+            }
+        }
+    }, new Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
+            System.out.println("Error is " + error.toString());
+            //progressBar.setVisibility(View.INVISIBLE);
+        }
+    })
+    {
+        @Override
+        protected Map<String, String> getParams() throws AuthFailureError {
+            Map <String,String> params  = new HashMap<String,String>();
+            return params;
+        }
+    };
+
+    MySingleton.getInstance(getApplicationContext()).addToRequestQueue(request);
+
+}
+
     @Override
     protected void onStart() {
         super.onStart();
