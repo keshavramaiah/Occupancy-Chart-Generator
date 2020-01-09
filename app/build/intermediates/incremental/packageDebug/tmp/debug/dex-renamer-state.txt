@@ -1,7 +1,7 @@
-#Thu Jan 09 11:38:16 IST 2020
-base.0=C\:\\Users\\Admin\\AndroidStudioProjects\\Occupancychart\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Thu Jan 09 15:16:43 IST 2020
+base.0=C\:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\Admin\\AndroidStudioProjects\\Occupancychart\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
+base.1=C\:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0

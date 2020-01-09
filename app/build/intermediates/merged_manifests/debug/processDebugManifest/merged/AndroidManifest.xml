@@ -17,16 +17,21 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.admin.occupancychart.MainActivity" >
+        <activity android:name="com.example.admin.occupancychart.Activities.InChargeHome" />
+        <activity android:name="com.example.admin.occupancychart.Activities.TeacherHome" />
+        <activity android:name="com.example.admin.occupancychart.Activities.StudentHome" />
+        <activity android:name="com.example.admin.occupancychart.Activities.MainActivity" />
+        <activity android:name="com.example.admin.occupancychart.Activities.Login" />
+        <activity android:name="com.example.admin.occupancychart.Activities.Register" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.admin.occupancychart.BarActivity" />
-        <activity android:name="com.example.admin.occupancychart.ScatterActivity" />
-        <activity android:name="com.example.admin.occupancychart.BubbleActivity" />
+        <activity android:name="com.example.admin.occupancychart.Activities.BarActivity" />
+        <activity android:name="com.example.admin.occupancychart.Activities.ScatterActivity" />
+        <activity android:name="com.example.admin.occupancychart.Activities.BubbleActivity" />
     </application>
 
 </manifest>
