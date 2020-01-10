@@ -158,7 +158,7 @@ public class Register extends AppCompatActivity {
         StringRequest request = new StringRequest(Request.Method.POST, Constants.REG_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 System.out.println("Response is : " + response.toString());
                 if(response.toString().contains("Values inserted")) {
                     signup.setBackgroundColor(getColor(R.color.white_greyish));
@@ -201,8 +201,10 @@ public class Register extends AppCompatActivity {
                 params.put(Constants.KEY_PASSWORD,password);
                 if(studclick)
                     params.put(Constants.KEY_TYPE,"Student");
-                else if(teacherclick)
+                else if(teacherclick) {
+                    params.put(Constants.KEY_NAME,rollname.getText().toString());
                     params.put(Constants.KEY_TYPE, "Teacher");
+                }
                 else if (inchargeclick)
                     params.put(Constants.KEY_TYPE, "InCharge");
                 return params;
@@ -237,6 +239,7 @@ public void getTeachers()
                 rollname.setThreshold(1);//will start working from first character
                 rollname.setAdapter(adapter);//setting the adapter data into the AutoCompleteTextView
                 rollname.setTextColor(Color.WHITE);
+
             }
         }
     }, new Response.ErrorListener() {
