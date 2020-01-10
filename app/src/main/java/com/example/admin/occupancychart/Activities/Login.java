@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity {
     private EditText loginedit,passwordedit;
     private String email,password;
     private TextView register;
-    private Button loginbtn;
+    private Button loginbtn,temp;
     private ConstraintLayout mainLayout;
     private ProgressBar progressBar;
     private SharedPreferences pref ;
@@ -54,6 +54,7 @@ public class Login extends AppCompatActivity {
         loginedit = findViewById(R.id.username);
         passwordedit = findViewById(R.id.password);
         register = findViewById(R.id.RegisterTxt);
+        temp = findViewById(R.id.Temp);
         progressBar = findViewById(R.id.loading);
         mainLayout = findViewById(R.id.container);
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode;
@@ -81,7 +82,12 @@ public class Login extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),Register.class));
             }
         });
-
+temp.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+    }
+});
         if(status!=null) {
             if (status.equals("In"))
             {   if(type==1)

@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.admin.occupancychart">
 
-    <uses-permission android:name="android.permission.INTERNET" ></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.InChargeHome"></activity>
+        <activity android:name=".Activities.MyMarkerView"></activity>
+        <activity android:name=".Activities.RoomActivity" />
+        <activity android:name=".Activities.InChargeHome" />
         <activity android:name=".Activities.TeacherHome" />
         <activity android:name=".Activities.StudentHome" />
         <activity android:name=".Activities.MainActivity" />

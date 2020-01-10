@@ -1,8 +1,12 @@
 package com.example.admin.occupancychart.Activities;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.net.Uri;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -10,6 +14,7 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -26,10 +31,12 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.interfaces.datasets.IDataSet;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.utils.MPPointF;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener,
@@ -171,8 +178,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         // NOTE: The order of the entries when being added to the entries array determines their position around the center of
         // the chart.
         for (int i = 0; i < count ; i++) {
-        entries.add(new PieEntry((float) ((Math.random() * range) + range / 5),
-                parties[i % parties.length]));}
+            entries.add(new PieEntry((float) ((Math.random() * range) + range / 5),
+                    parties[i % parties.length]));}
        /*entries.add(new PieEntry(25,"Pakistan"));
         entries.add(new PieEntry(10,"Africa"));
         entries.add(new PieEntry(26,"India"));
@@ -222,12 +229,12 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         chart.invalidate();
 
-        }
+    }
 
     @Override
     public void onClick(View view) {
 
-        Intent i=new Intent(MainActivity.this,BarActivity.class);
+        Intent i=new Intent(MainActivity.this,RoomActivity.class);
         startActivity(i);
     }
 }

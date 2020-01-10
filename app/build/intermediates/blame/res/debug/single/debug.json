@@ -140,6 +140,10 @@
         "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\9796688045f98fa6a3ee6ff773d09df1\\res\\drawable-xxhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\res\\merged\\debug\\drawable_fade_red.xml.flat",
+        "source": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\src\\main\\res\\drawable\\fade_red.xml"
+    },
+    {
         "merged": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\9796688045f98fa6a3ee6ff773d09df1\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
@@ -1224,6 +1228,10 @@
         "source": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_my_marker_view.xml.flat",
+        "source": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\src\\main\\res\\layout\\activity_my_marker_view.xml"
+    },
+    {
         "merged": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\9796688045f98fa6a3ee6ff773d09df1\\res\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
@@ -1778,6 +1786,10 @@
     {
         "merged": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_popup_exit.xml.flat",
         "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\9796688045f98fa6a3ee6ff773d09df1\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_room.xml.flat",
+        "source": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\src\\main\\res\\layout\\activity_room.xml"
     },
     {
         "merged": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",

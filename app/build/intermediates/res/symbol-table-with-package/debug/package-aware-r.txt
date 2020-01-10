@@ -959,6 +959,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable email
+drawable fade_red
 drawable gard2
 drawable grad1
 drawable grad3
@@ -1002,6 +1003,7 @@ id SignUpBtn
 id SignupProgress
 id StudentSelect
 id TeacherSelect
+id Temp
 id action0
 id actionDrawCenter
 id actionSave
@@ -1144,6 +1146,9 @@ id right_icon
 id right_side
 id right_to_left
 id rollName
+id s1
+id s2
+id s3
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1208,6 +1213,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tvContent
 id tvXMax
 id tvYMax
 id uniform
@@ -1262,7 +1268,9 @@ layout activity_bubble
 layout activity_in_charge_home
 layout activity_login
 layout activity_main
+layout activity_my_marker_view
 layout activity_register
+layout activity_room
 layout activity_scatter
 layout activity_student_home
 layout activity_teacher_home
