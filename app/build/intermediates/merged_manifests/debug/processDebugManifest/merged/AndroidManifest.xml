@@ -27,6 +27,7 @@
         <activity android:name="com.example.admin.occupancychart.BarActivity" />
         <activity android:name="com.example.admin.occupancychart.ScatterActivity" />
         <activity android:name="com.example.admin.occupancychart.BubbleActivity" />
+        <activity android:name="com.example.admin.occupancychart.RoomActivity" />
     </application>
 
 </manifest>

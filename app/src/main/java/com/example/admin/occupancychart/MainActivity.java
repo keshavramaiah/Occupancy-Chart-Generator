@@ -233,7 +233,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     @Override
     public void onClick(View view) {
 
-        Intent i=new Intent(MainActivity.this,BarActivity.class);
+        Intent i=new Intent(MainActivity.this,RoomActivity.class);
         startActivity(i);
     }
 }

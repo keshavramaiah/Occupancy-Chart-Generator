@@ -12,13 +12,13 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".BarActivity" />
         <activity android:name=".ScatterActivity" />
-        <activity android:name=".BubbleActivity"></activity>
+        <activity android:name=".BubbleActivity" />
+        <activity android:name=".RoomActivity"></activity>
     </application>
 
 </manifest>

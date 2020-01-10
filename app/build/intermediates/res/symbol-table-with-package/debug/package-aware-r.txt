@@ -495,6 +495,7 @@ color navajo_white
 color navy
 color notification_action_color_filter
 color notification_icon_bg_color
+color notification_material_background_media_default_color
 color old_lace
 color olive
 color olive_drab
@@ -756,6 +757,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable fade_red
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable notification_action_background
@@ -778,6 +780,7 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
+id action0
 id actionDrawCenter
 id actionSave
 id actionToggleCurvedSlices
@@ -820,6 +823,7 @@ id beginning
 id blocking
 id bottom
 id buttonPanel
+id cancel_action
 id center
 id center_horizontal
 id center_vertical
@@ -840,6 +844,7 @@ id direct
 id disableHome
 id edit_query
 id end
+id end_padder
 id expand_activities_button
 id expanded_menu
 id fill
@@ -862,6 +867,7 @@ id line1
 id line3
 id listMode
 id list_item
+id media_actions
 id message
 id middle
 id multiply
@@ -882,6 +888,9 @@ id radio
 id right
 id right_icon
 id right_side
+id s1
+id s2
+id s3
 id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -912,6 +921,7 @@ id src_in
 id src_over
 id standard
 id start
+id status_bar_latest_event_content
 id submenuarrow
 id submit_area
 id tabMode
@@ -926,6 +936,7 @@ id titleDividerNoCustom
 id title_template
 id top
 id topPanel
+id tvContent
 id tvXMax
 id tvYMax
 id uniform
@@ -970,11 +981,22 @@ layout abc_tooltip
 layout activity_bar
 layout activity_bubble
 layout activity_main
+layout activity_mymarkerview
+layout activity_room
 layout activity_scatter
 layout notification_action
 layout notification_action_tombstone
+layout notification_media_action
+layout notification_media_cancel_action
+layout notification_template_big_media
+layout notification_template_big_media_custom
+layout notification_template_big_media_narrow
+layout notification_template_big_media_narrow_custom
 layout notification_template_custom_big
 layout notification_template_icon_group
+layout notification_template_lines_media
+layout notification_template_media
+layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout select_dialog_item_material
@@ -1049,6 +1071,7 @@ string animateXY
 string animateY
 string app_name
 string dash
+string hello_blank_fragment
 string reportProblem
 string scrollViewEnd
 string scrollViewStart
@@ -1289,9 +1312,14 @@ style TextAppearance_AppCompat_Widget_Switch
 style TextAppearance_AppCompat_Widget_TextView_SpinnerItem
 style TextAppearance_Compat_Notification
 style TextAppearance_Compat_Notification_Info
+style TextAppearance_Compat_Notification_Info_Media
 style TextAppearance_Compat_Notification_Line2
+style TextAppearance_Compat_Notification_Line2_Media
+style TextAppearance_Compat_Notification_Media
 style TextAppearance_Compat_Notification_Time
+style TextAppearance_Compat_Notification_Time_Media
 style TextAppearance_Compat_Notification_Title
+style TextAppearance_Compat_Notification_Title_Media
 style TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style TextAppearance_Widget_AppCompat_Toolbar_Title
