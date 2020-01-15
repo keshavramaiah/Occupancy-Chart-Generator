@@ -181,12 +181,13 @@ public class Register extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), RoomActivity.class));
                     }
                 }
-                else if(response.toString().contains("User already exists"))
+                else if(response.toString().contains("Email already exists"))
                 {
 
                     signup.setBackgroundColor(getColor(R.color.button_selectorcolor));
                     progressBar.setVisibility(View.INVISIBLE);
-                    Toast.makeText(getApplicationContext(),"User already exits",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Email already exits,try logging in",Toast.LENGTH_SHORT).show();
+                    signup.setBackgroundColor(getColor(R.color.white_greyish));
                 }
                 signup.setEnabled(true);
             }
