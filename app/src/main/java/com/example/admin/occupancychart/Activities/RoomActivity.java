@@ -1,5 +1,7 @@
 package com.example.admin.occupancychart.Activities;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.graphics.drawable.Drawable;
@@ -16,7 +18,15 @@ import android.widget.ArrayAdapter;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.example.admin.occupancychart.Models.Constants;
+import com.example.admin.occupancychart.Models.MySingleton;
 import com.example.admin.occupancychart.R;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Legend;
@@ -34,46 +44,43 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RoomActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener,
         OnChartValueSelectedListener {
-    Spinner s1,s2,s3;
+    Spinner RoomSpinner,ChoiceSpinner,DaySpinner;
+    private String roomselection;
+    private ProgressDialog dialog;
     private LineChart chart;
     private SeekBar seekBarX, seekBarY;
     private TextView tvX, tvY;
-    String room[]={"None","A203","A204","A303","A304","C401","C403"};
+    String room[]={"None","A203","A204","A303","A304","C203","C204"};
     String choice[]={"DayWise","Weekly"};
     String days[]={"Monday","Tuesday","Wednesday","Thursday","Friday"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
+        dialog= new ProgressDialog(RoomActivity.this);
 
-        s1=findViewById(R.id.s1);
-        s2=findViewById(R.id.s2);
-        s3=findViewById(R.id.s3);
+        RoomSpinner=findViewById(R.id.s1);
+        ChoiceSpinner=findViewById(R.id.s2);
+        DaySpinner=findViewById(R.id.s3);
 
-        s2.setVisibility(View.INVISIBLE);
-        s3.setVisibility(View.INVISIBLE);
+        ChoiceSpinner.setVisibility(View.INVISIBLE);
+        DaySpinner.setVisibility(View.INVISIBLE);
 
-        s1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        RoomSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if(i!=0)
-                    s2.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-        s2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if(i==1)
-                {
-                    s3.setVisibility(View.VISIBLE);
+                if(i!=0) {
+                    ChoiceSpinner.setVisibility(View.VISIBLE);
+                    roomselection = room[i];
+                    System.out.println("room is " + roomselection);
+                    dialog.setMessage("Getting data, please wait.");
+                    dialog.show();
+                    getData();
                 }
             }
 
@@ -82,7 +89,22 @@ public class RoomActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
             }
         });
-        s3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        ChoiceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(i==1)
+                {
+                    DaySpinner.setVisibility(View.VISIBLE);
+                    chart.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        DaySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
@@ -94,20 +116,20 @@ public class RoomActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             }
         });
 
-        ArrayAdapter ss1 = new ArrayAdapter(this,android.R.layout.simple_spinner_item,room);
-        ss1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter sRoomSpinner = new ArrayAdapter(this,android.R.layout.simple_spinner_item,room);
+        sRoomSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
-        s1.setAdapter(ss1);
+        RoomSpinner.setAdapter(sRoomSpinner);
 
-        ArrayAdapter ss2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item,choice);
-        ss2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter sChoiceSpinner = new ArrayAdapter(this,android.R.layout.simple_spinner_item,choice);
+        sChoiceSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
-        s2.setAdapter(ss2);
+        ChoiceSpinner.setAdapter(sChoiceSpinner);
 
-        ArrayAdapter ss3 = new ArrayAdapter(this,android.R.layout.simple_spinner_item,days);
-        ss3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter dayAdapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,days);
+        dayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
-        s3.setAdapter(ss3);
+        DaySpinner.setAdapter(dayAdapter);
 
         setTitle("LineChartActivity1");
 
@@ -124,7 +146,7 @@ public class RoomActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         {   // // Chart Style // //
             chart = findViewById(R.id.chart1);
-
+            chart.setVisibility(View.GONE);
             // background color
             chart.setBackgroundColor(Color.WHITE);
 
@@ -338,5 +360,37 @@ public class RoomActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     }
 
 
+    private void getData() {
 
+
+        StringRequest request = new StringRequest(Request.Method.POST, Constants.ROOM_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if (dialog.isShowing())
+                    dialog.dismiss();
+
+                //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
+                System.out.println("Response is : " + response.toString());
+                String[] rep= response.split(";");
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
+                System.out.println("Error is " + error.toString());
+            }
+        })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map <String,String> params  = new HashMap<String,String>();
+                params.put(Constants.KEY_ROOM,roomselection);
+                return params;
+            }
+        };
+
+        MySingleton.getInstance(getApplicationContext()).addToRequestQueue(request);
+
+    }
 }
