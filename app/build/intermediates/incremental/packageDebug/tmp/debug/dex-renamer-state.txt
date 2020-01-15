@@ -1,4 +1,4 @@
-#Fri Jan 10 18:37:48 IST 2020
+#Wed Jan 15 17:33:44 IST 2020
 base.0=C\:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
 path.1=classes.dex
 renamed.1=classes2.dex

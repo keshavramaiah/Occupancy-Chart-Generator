@@ -371,6 +371,9 @@ public class RoomActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
                 //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 System.out.println("Response is : " + response.toString());
+                //rep contains an array of strings
+                // each item will be a number followed by a comma and a number
+                // Eg: 1,5  - corresponds to monday there are 5 periods
                 String[] rep= response.split(";");
 
             }
