@@ -1,7 +1,9 @@
 package com.example.admin.occupancychart.Activities;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -20,7 +22,15 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.example.admin.occupancychart.Models.Constants;
+import com.example.admin.occupancychart.Models.MySingleton;
 import com.example.admin.occupancychart.R;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -37,7 +47,12 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.utils.MPPointF;
 
 import java.lang.reflect.Array;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener,
         OnChartValueSelectedListener,View.OnClickListener {
@@ -45,15 +60,31 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     private PieChart chart;
     private SeekBar seekBarX, seekBarY;
     private TextView tvX, tvY;
+    private SharedPreferences pref ;
+    private SharedPreferences.Editor editor ;
+    private ProgressDialog dialog;
+    private String name;
+    private int day;
     Button b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Calendar calendar = Calendar.getInstance();
+        dialog= new ProgressDialog(MainActivity.this);
+        day = calendar.get(Calendar.DAY_OF_WEEK)-1;
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         setTitle("PieChartActivity");
-
+        pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode;
+        name=pref.getString("Name",null);
+        if(name==null)
+        {
+            Toast.makeText(getApplicationContext(),"Registration error,please register again",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(),Register.class));
+        }
+        else
+            getData();
         tvX = findViewById(R.id.tvXMax);
         tvY = findViewById(R.id.tvYMax);
 
@@ -236,5 +267,40 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         Intent i=new Intent(MainActivity.this,RoomActivity.class);
         startActivity(i);
+    }
+    private void getData() {
+
+
+        StringRequest request = new StringRequest(Request.Method.POST, Constants.TEACHERDATA_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if (dialog.isShowing())
+                    dialog.dismiss();
+
+                //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
+                System.out.println("Response is : " + response.toString());
+
+                String[] rep= response.split(";");
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
+                System.out.println("Error is " + error.toString());
+            }
+        })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map <String,String> params  = new HashMap<String,String>();
+            params.put(Constants.KEY_DAY,String.valueOf(day));
+            params.put(Constants.KEY_NAME,name);
+                return params;
+            }
+        };
+
+        MySingleton.getInstance(getApplicationContext()).addToRequestQueue(request);
+
     }
 }

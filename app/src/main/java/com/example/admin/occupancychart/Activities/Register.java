@@ -64,7 +64,7 @@ public class Register extends AppCompatActivity {
         editor = pref.edit();
         progressBar = findViewById(R.id.SignupProgress);
         progressBar.setVisibility(View.INVISIBLE);
-
+        editor.putString("Status","Out");
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +73,7 @@ public class Register extends AppCompatActivity {
                 email = emailedit.getText().toString().trim();
                 password = passwordedit.getText().toString().trim();
                 confirmpassword = passconfirmedit.getText().toString().trim();
-                if(name.length()>0 && email.length()>0 && password.length()> 0 && confirmpassword.length()>0) {
+                if((name.length()>0 || rollname.getText().toString().length()>0) && email.length()>0 && password.length()> 0 && confirmpassword.length()>0) {
 
                     if (email.contains("@")) {
                         if (password.equals(confirmpassword)) {
@@ -163,18 +163,27 @@ public class Register extends AppCompatActivity {
                 if(response.toString().contains("Values inserted")) {
                     signup.setBackgroundColor(getColor(R.color.white_greyish));
                     progressBar.setVisibility(View.INVISIBLE);
+                    editor.putString("Status","In");
                     editor.putString(Constants.KEY_EMAIL, email);
                     editor.commit();
-                    if(teacherclick)
-                        startActivity(new Intent(getApplicationContext(),TeacherHome.class));
-                    else if (studclick)
-                        startActivity(new Intent(getApplicationContext(),StudentHome.class));
-                    else if (inchargeclick)
-                        startActivity(new Intent(getApplicationContext(),InChargeHome.class));
+                    if(teacherclick) {
+                        editor.putInt("Type",2);
+                        editor.putString("Name",rollname.getText().toString());
+                        editor.apply();
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    }
+                    else if (studclick) {
+                        editor.putInt("Type",1);
+                        startActivity(new Intent(getApplicationContext(), StudentHome.class));
 
+                    }else if (inchargeclick) {
+                        editor.putInt("Type",3);
+                        startActivity(new Intent(getApplicationContext(), RoomActivity.class));
+                    }
                 }
                 else if(response.toString().contains("User already exists"))
                 {
+
                     signup.setBackgroundColor(getColor(R.color.button_selectorcolor));
                     progressBar.setVisibility(View.INVISIBLE);
                     Toast.makeText(getApplicationContext(),"User already exits",Toast.LENGTH_SHORT).show();

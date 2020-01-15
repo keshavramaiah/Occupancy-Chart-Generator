@@ -93,9 +93,9 @@ temp.setOnClickListener(new View.OnClickListener() {
             {   if(type==1)
                 startActivity(new Intent(getApplicationContext(), StudentHome.class));
             else if(type==2)
-                startActivity(new Intent(getApplicationContext(), TeacherHome.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             else if(type==3)
-                startActivity(new Intent(getApplicationContext(), InChargeHome.class));
+                startActivity(new Intent(getApplicationContext(), RoomActivity.class));
             }
         }
     }
@@ -120,7 +120,7 @@ temp.setOnClickListener(new View.OnClickListener() {
                 }
                 else if (response.toString().contains("Teacher")) {
                     progressBar.setVisibility(View.INVISIBLE);
-                    startActivity(new Intent(getApplicationContext(), TeacherHome.class));
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     loginbtn.setEnabled(true);
                     editor.putString(Constants.KEY_EMAIL, email);
                     editor.putInt("Type",2);
@@ -129,7 +129,7 @@ temp.setOnClickListener(new View.OnClickListener() {
                 }
                 else if (response.toString().contains("InCharge")) {
                     progressBar.setVisibility(View.INVISIBLE);
-                    startActivity(new Intent(getApplicationContext(), InChargeHome.class));
+                    startActivity(new Intent(getApplicationContext(), RoomActivity.class));
                     loginbtn.setEnabled(true);
                     editor.putString(Constants.KEY_EMAIL, email);
                     editor.putInt("Type",3);
