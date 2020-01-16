@@ -278,6 +278,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                 if (dialog.isShowing())
                     dialog.dismiss();
                 //Response will contain the classes for today separated by commas
+                // Eg - "1;Software eng" - 1 stands for period
                 //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 System.out.println("Response is : " + response.toString());
 
