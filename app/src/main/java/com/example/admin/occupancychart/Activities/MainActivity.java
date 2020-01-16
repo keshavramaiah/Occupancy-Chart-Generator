@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         }
         else
             getData();
+        Toast.makeText(getApplicationContext(),"Welcome back "+name,Toast.LENGTH_SHORT).show();
         tvX = findViewById(R.id.tvXMax);
         tvY = findViewById(R.id.tvYMax);
 
@@ -276,7 +277,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             public void onResponse(String response) {
                 if (dialog.isShowing())
                     dialog.dismiss();
-
+                //Response will contain the classes for today separated by commas
                 //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 System.out.println("Response is : " + response.toString());
 
