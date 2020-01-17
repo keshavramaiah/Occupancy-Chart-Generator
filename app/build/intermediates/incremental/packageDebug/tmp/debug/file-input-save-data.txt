@@ -1,0 +1,11 @@
+#Internal package file, do not edit.
+#Fri Jan 17 14:52:40 IST 2020
+1.base=C\:\\Users\\Admin\\AndroidStudioProjects\\Occupancy-Chart-Generator-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+0.baseType=DIRECTORY
+1.baseType=DIRECTORY
+count=2
+1.set=DEX
+0.path=classes.dex
+0.set=DEX
+0.base=C\:\\Users\\Admin\\AndroidStudioProjects\\Occupancy-Chart-Generator-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
+1.path=classes.dex
