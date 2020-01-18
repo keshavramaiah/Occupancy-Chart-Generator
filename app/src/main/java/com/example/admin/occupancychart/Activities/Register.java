@@ -189,6 +189,12 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Email already exits,try logging in",Toast.LENGTH_SHORT).show();
                     signup.setBackgroundColor(getColor(R.color.white_greyish));
                 }
+                else if(response.toString().contains("InvalidStudent"))
+                {
+                    Toast.makeText(getApplicationContext(),"Invalid Roll no provided",Toast.LENGTH_SHORT).show();
+                    signup.setBackgroundColor(getColor(R.color.white_greyish));
+                    progressBar.setVisibility(View.INVISIBLE);
+                }
                 signup.setEnabled(true);
             }
         }, new Response.ErrorListener() {
