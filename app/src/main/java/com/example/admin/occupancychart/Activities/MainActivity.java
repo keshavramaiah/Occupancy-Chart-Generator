@@ -281,7 +281,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                 // Eg - "1;Software eng" - 1 stands for period
                 //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 System.out.println("Response is : " + response.toString());
-
+                if(response.length()==0)
+                    Toast.makeText(getApplicationContext(),"No classes today",Toast.LENGTH_SHORT).show();
                 String[] rep= response.split(";");
 
             }

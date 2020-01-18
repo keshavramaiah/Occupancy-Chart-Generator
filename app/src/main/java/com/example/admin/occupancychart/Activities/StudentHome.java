@@ -57,7 +57,9 @@ public class StudentHome extends AppCompatActivity {
 
                 //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 String rep =  response.toString();
-                System.out.println("REsponse is " + rep);
+                System.out.println("Response is " + rep);
+                if(rep.length()==0)
+                    Toast.makeText(getApplicationContext(),"No classes today",Toast.LENGTH_SHORT).show();
                 if (rep.contains("Error"))
                 {
 
