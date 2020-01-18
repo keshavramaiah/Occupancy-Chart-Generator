@@ -158,11 +158,12 @@ public class Register extends AppCompatActivity {
         StringRequest request = new StringRequest(Request.Method.POST, Constants.REG_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                progressBar.setVisibility(View.INVISIBLE);
                // Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 System.out.println("Response is : " + response.toString());
+                signup.setBackgroundColor(getColor(R.color.white_greyish));
                 if(response.toString().contains("Values inserted")) {
-                    signup.setBackgroundColor(getColor(R.color.white_greyish));
-                    progressBar.setVisibility(View.INVISIBLE);
+                   // signup.setBackgroundColor(getColor(R.color.white_greyish));
                     editor.putString("Status","In");
                     editor.putString(Constants.KEY_EMAIL, email);
                     editor.commit();
@@ -174,17 +175,20 @@ public class Register extends AppCompatActivity {
                     }
                     else if (studclick) {
                         editor.putInt("Type",1);
+                        editor.putString("ROLL",name);
+                        editor.apply();
                         startActivity(new Intent(getApplicationContext(), StudentHome.class));
 
                     }else if (inchargeclick) {
                         editor.putInt("Type",3);
+                        editor.putString("Name",name);
+                        editor.apply();
                         startActivity(new Intent(getApplicationContext(), RoomActivity.class));
                     }
                 }
                 else if(response.toString().contains("Email already exists"))
                 {
 
-                    signup.setBackgroundColor(getColor(R.color.button_selectorcolor));
                     progressBar.setVisibility(View.INVISIBLE);
                     Toast.makeText(getApplicationContext(),"Email already exits,try logging in",Toast.LENGTH_SHORT).show();
                     signup.setBackgroundColor(getColor(R.color.white_greyish));
