@@ -47,16 +47,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RoomActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener,
-        OnChartValueSelectedListener {
+public class RoomActivity extends AppCompatActivity implements OnChartValueSelectedListener {
     Spinner RoomSpinner,ChoiceSpinner,DaySpinner;
     private String roomselection;
     private ProgressDialog dialog;
+    ArrayList<Entry> values = new ArrayList<>();
     private LineChart chart;
-    private SeekBar seekBarX, seekBarY;
-    private TextView tvX, tvY;
     String room[]={"None","A203","A204","A303","A304","C203","C204"};
-    String choice[]={"DayWise","Weekly"};
+    String choice[]={"None","DayWise","Weekly"};
     String days[]={"Monday","Tuesday","Wednesday","Thursday","Friday"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,10 +90,14 @@ public class RoomActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         ChoiceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(i==2)
+                {
+                    //DaySpinner.setVisibility(View.VISIBLE);
+                    chart.setVisibility(View.VISIBLE);
+                }
                 if(i==1)
                 {
                     DaySpinner.setVisibility(View.VISIBLE);
-                    chart.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -133,15 +135,7 @@ public class RoomActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         setTitle("LineChartActivity1");
 
-        tvX = findViewById(R.id.tvXMax);
-        tvY = findViewById(R.id.tvYMax);
 
-        seekBarX = findViewById(R.id.seekBar1);
-        seekBarX.setOnSeekBarChangeListener(this);
-
-        seekBarY = findViewById(R.id.seekBar2);
-        seekBarY.setMax(180);
-        seekBarY.setOnSeekBarChangeListener(this);
 
 
         {   // // Chart Style // //
@@ -169,9 +163,10 @@ public class RoomActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
             // enable scaling and dragging
             chart.setDragEnabled(true);
-            chart.setScaleEnabled(true);
-            // chart.setScaleXEnabled(true);
-            // chart.setScaleYEnabled(true);
+
+            // chart.setScaleEnabled(true);
+            //chart.setScaleXEnabled(true);
+            //chart.setScaleYEnabled(true);
 
             // force pinch zoom along both axis
             chart.setPinchZoom(true);
@@ -196,44 +191,11 @@ public class RoomActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             yAxis.enableGridDashedLine(10f, 10f, 0f);
 
             // axis range
-            yAxis.setAxisMaximum(200f);
-            yAxis.setAxisMinimum(-50f);
+            yAxis.setAxisMaximum(10f);
+            yAxis.setAxisMinimum(0f);
         }
 
 
-        {   // // Create Limit Lines // //
-            LimitLine llXAxis = new LimitLine(9f, "Index 10");
-            llXAxis.setLineWidth(4f);
-            llXAxis.enableDashedLine(10f, 10f, 0f);
-            llXAxis.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_BOTTOM);
-            llXAxis.setTextSize(10f);
-
-            LimitLine ll1 = new LimitLine(150f, "Upper Limit");
-            ll1.setLineWidth(4f);
-            ll1.enableDashedLine(10f, 10f, 0f);
-            ll1.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_TOP);
-            ll1.setTextSize(10f);
-
-            LimitLine ll2 = new LimitLine(-30f, "Lower Limit");
-            ll2.setLineWidth(4f);
-            ll2.enableDashedLine(10f, 10f, 0f);
-            ll2.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_BOTTOM);
-            ll2.setTextSize(10f);
-
-            // draw limit lines behind data instead of on top
-            yAxis.setDrawLimitLinesBehindData(true);
-            xAxis.setDrawLimitLinesBehindData(true);
-
-            // add limit lines
-            yAxis.addLimitLine(ll1);
-            yAxis.addLimitLine(ll2);
-            //xAxis.addLimitLine(llXAxis);
-        }
-
-        // add data
-        seekBarX.setProgress(45);
-        seekBarY.setProgress(180);
-        setData(45, 180);
 
         // draw points over time
         chart.animateX(1500);
@@ -248,16 +210,7 @@ public class RoomActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
     }
 
-    private void setData(int count, float range) {
-
-        ArrayList<Entry> values = new ArrayList<>();
-
-        for (int i = 0; i < count; i++) {
-
-            float val = (float) (Math.random() * range) - 30;
-            values.add(new Entry(i, val));
-        }
-
+    private void setData() {
         LineDataSet set1;
 
         if (chart.getData() != null &&
@@ -269,7 +222,7 @@ public class RoomActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             chart.notifyDataSetChanged();
         } else {
             // create a dataset and give it a type
-            set1 = new LineDataSet(values, "DataSet 1");
+            set1 = new LineDataSet(values, "Number of Periods in a Particular day");
 
             set1.setDrawIcons(false);
 
@@ -329,29 +282,12 @@ public class RoomActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
     }
 
-    @Override
-    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
-        tvX.setText(String.valueOf(seekBarX.getProgress()));
-        tvY.setText(String.valueOf(seekBarY.getProgress()));
-
-        setData(seekBarX.getProgress(), seekBarY.getProgress());
-
-        // redraw
-        chart.invalidate();
-    }
-
-    @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {}
-
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {}
 
     @Override
     public void onValueSelected(Entry e, Highlight h) {
-        Log.i("Entry selected", e.toString());
-        Log.i("LOW HIGH", "low: " + chart.getLowestVisibleX() + ", high: " + chart.getHighestVisibleX());
-        Log.i("MIN MAX", "xMin: " + chart.getXChartMin() + ", xMax: " + chart.getXChartMax() + ", yMin: " + chart.getYChartMin() + ", yMax: " + chart.getYChartMax());
+        // Log.i("Entry selected", e.toString());
+        //Log.i("LOW HIGH", "low: " + chart.getLowestVisibleX() + ", high: " + chart.getHighestVisibleX());
+        //Log.i("MIN MAX", "xMin: " + chart.getXChartMin() + ", xMax: " + chart.getXChartMax() + ", yMin: " + chart.getYChartMin() + ", yMax: " + chart.getYChartMax());
     }
 
     @Override
@@ -370,11 +306,16 @@ public class RoomActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                     dialog.dismiss();
 
                 //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
-                System.out.println("Response is : " + response.toString());
+                // System.out.println("Response is : " + response.toString());
                 //rep contains an array of strings
                 // each item will be a number followed by a comma and a number
                 // Eg: 1,5  - corresponds to monday there are 5 periods
                 String[] rep= response.split(";");
+                for (int i = 0; i < rep.length; i++) {
+                    String temp[]=rep[i].split(",");
+                    values.add(new Entry(Integer.parseInt(temp[0]),Integer.parseInt(temp[1])));
+                }
+                setData();
 
             }
         }, new Response.ErrorListener() {
