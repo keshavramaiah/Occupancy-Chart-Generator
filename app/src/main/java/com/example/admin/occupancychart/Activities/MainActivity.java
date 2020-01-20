@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     private SharedPreferences.Editor editor ;
     private ProgressDialog dialog;
     private String name;
+    String[] rep;
     private int day;
     Button b;
     @Override
@@ -152,6 +153,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         b.setOnClickListener(this);
 
+
     }
 
 
@@ -162,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         tvX.setText(String.valueOf(seekBarX.getProgress()));
         tvY.setText(String.valueOf(seekBarY.getProgress()));
 
-        setData(seekBarX.getProgress(), seekBarY.getProgress());
+
     }
 
 
@@ -204,21 +206,26 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {}
 
-    private void setData(int count, float range) {
+    private void setData() {
         ArrayList<PieEntry> entries = new ArrayList<>();
-        String[] parties={"Network Security","Pattern Recognition","Cryptography","Mentoring"};
+        //String[] parties={"Network Security","Pattern Recognition","Cryptography","Mentoring"};
         // NOTE: The order of the entries when being added to the entries array determines their position around the center of
         // the chart.
-        for (int i = 0; i < count ; i++) {
-            entries.add(new PieEntry((float) ((Math.random() * range) + range / 5),
-                    parties[i % parties.length]));}
+        Log.d("CHECK",rep.length+" ");
+        for(int i=0;i<rep.length-1;i++)
+        {
+            String[] temp=rep[i].split(";");
+            //Toast.makeText(this,temp[0],Toast.LENGTH_LONG).show();
+            entries.add(new PieEntry(Integer.valueOf(temp[0]),temp[1]));
+        }
+
        /*entries.add(new PieEntry(25,"Pakistan"));
         entries.add(new PieEntry(10,"Africa"));
         entries.add(new PieEntry(26,"India"));
         entries.add(new PieEntry(60,"Nepal"));
         entries.add(new PieEntry(16,"USA"));*/
 
-        PieDataSet dataSet = new PieDataSet(entries, "Countries");
+        PieDataSet dataSet = new PieDataSet(entries, "Period For today");
 
         dataSet.setDrawIcons(false);
 
@@ -280,10 +287,12 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                 //Response will contain the classes for today separated by commas
                 // Eg - "1;Software eng" - 1 stands for period
                 //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
-                System.out.println("Response is : " + response.toString());
-                if(response.length()==0)
-                    Toast.makeText(getApplicationContext(),"No classes today",Toast.LENGTH_SHORT).show();
-                String[] rep= response.split(";");
+                //System.out.println("Response is : " + response);
+
+                rep= response.split(",");
+                //Toast.makeText(getApplicationContext(),rep[0],Toast.LENGTH_LONG).show();
+                setData();
+
 
             }
         }, new Response.ErrorListener() {
@@ -297,8 +306,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map <String,String> params  = new HashMap<String,String>();
-            params.put(Constants.KEY_DAY,String.valueOf(day));
-            params.put(Constants.KEY_NAME,name);
+                params.put(Constants.KEY_DAY,String.valueOf(day));
+                params.put(Constants.KEY_NAME,name);
                 return params;
             }
         };
