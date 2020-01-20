@@ -55,7 +55,7 @@ public class StudentHome extends AppCompatActivity {
                 if (dialog.isShowing())
                     dialog.dismiss();
 
-                //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 String rep =  response.toString();
                 System.out.println("Response is " + rep);
                 if(rep.length()==0)

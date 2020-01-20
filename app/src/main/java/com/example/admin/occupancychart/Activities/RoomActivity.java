@@ -76,9 +76,8 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
                     ChoiceSpinner.setVisibility(View.VISIBLE);
                     roomselection = room[i];
                     System.out.println("room is " + roomselection);
-                    dialog.setMessage("Getting data, please wait.");
-                    dialog.show();
-                    getData();
+
+                   // getData();
                 }
             }
 
@@ -94,10 +93,16 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
                 {
                     //DaySpinner.setVisibility(View.VISIBLE);
                     chart.setVisibility(View.VISIBLE);
+                    dialog.setMessage("Getting data, please wait.");
+                    dialog.show();
+                    getData();
                 }
                 if(i==1)
                 {
                     DaySpinner.setVisibility(View.VISIBLE);
+                    dialog.setMessage("Getting data, please wait.");
+                    dialog.show();
+                    getDailyData();
                 }
             }
 
@@ -300,6 +305,48 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
 
 
         StringRequest request = new StringRequest(Request.Method.POST, Constants.ROOM_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if (dialog.isShowing())
+                    dialog.dismiss();
+
+                //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
+                // System.out.println("Response is : " + response.toString());
+                //rep contains an array of strings
+                // each item will be a number followed by a comma and a number
+                // Eg: 1,5  - corresponds to monday there are 5 periods
+                String[] rep= response.split(";");
+                for (int i = 0; i < rep.length; i++) {
+                    String temp[]=rep[i].split(",");
+                    values.add(new Entry(Integer.parseInt(temp[0]),Integer.parseInt(temp[1])));
+                }
+                setData();
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
+                System.out.println("Error is " + error.toString());
+            }
+        })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map <String,String> params  = new HashMap<String,String>();
+                params.put(Constants.KEY_ROOM,roomselection);
+                return params;
+            }
+        };
+
+        MySingleton.getInstance(getApplicationContext()).addToRequestQueue(request);
+
+    }
+
+    private void getDailyData() {
+
+
+        StringRequest request = new StringRequest(Request.Method.POST, Constants.DAILYDATA_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 if (dialog.isShowing())
