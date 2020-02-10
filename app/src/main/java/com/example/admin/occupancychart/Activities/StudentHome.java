@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -17,12 +19,15 @@ import com.android.volley.toolbox.StringRequest;
 import com.example.admin.occupancychart.Models.Constants;
 import com.example.admin.occupancychart.Models.MySingleton;
 import com.example.admin.occupancychart.Models.Period;
+import com.example.admin.occupancychart.Models.PeriodAdapter;
 import com.example.admin.occupancychart.R;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+
+import static java.security.AccessController.getContext;
 
 public class StudentHome extends AppCompatActivity {
     private int day;
@@ -31,6 +36,8 @@ public class StudentHome extends AppCompatActivity {
     private String classes[],periods[];
     private Period period;
     private ArrayList<Period>listOfPeriods;
+    private PeriodAdapter periodAdapter;
+    private RecyclerView recyclerView;
     private String roll;
     private String[] times = new String[]{"0","8:40am-9:30am","9:30am-10:20am","10:20am-11:10am","11:20am-12:10pm","12:10pm-1:00pm","2:00pm-2:50pm","2:50pm-3:40pm","3:40pm-4:30pm"};
     @Override
@@ -40,6 +47,7 @@ public class StudentHome extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         period=new Period();
         listOfPeriods=new ArrayList<>();
+        recyclerView = findViewById(R.id.PeriodRecycler);
         dialog= new ProgressDialog(StudentHome.this);
         day = calendar.get(Calendar.DAY_OF_WEEK)-1;
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode;
@@ -66,7 +74,7 @@ public class StudentHome extends AppCompatActivity {
 
                 String rep =  response.toString();
                //System.out.println("Response is " + rep);
-                if(rep.length()==0)
+                if(rep.length()==4)
                     Toast.makeText(getApplicationContext(),"No classes today",Toast.LENGTH_SHORT).show();
                 if (rep.contains("Error"))
                 {
@@ -76,7 +84,7 @@ public class StudentHome extends AppCompatActivity {
                 {
                     String room = rep.substring(0,4);
                     rep = rep.substring(4);
-                    Toast.makeText(getApplicationContext(),rep.toString(), Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getApplicationContext(),rep.toString(), Toast.LENGTH_LONG).show();
                     System.out.println(room);
                     String []r = rep.split(";");
                     String []temp;
@@ -89,10 +97,9 @@ public class StudentHome extends AppCompatActivity {
                         classes[i]=temp[1];
                         periods[i]=times[Integer.valueOf(periods[i])];
                         listOfPeriods.add(new Period(room,periods[i],classes[i]));
-//                        System.out.println(classes[i]);
-//                        System.out.println(periods[i]);
                         i++;
                     }
+                    dispadapter(listOfPeriods);
                 }
             }
         }, new Response.ErrorListener() {
@@ -115,5 +122,12 @@ public class StudentHome extends AppCompatActivity {
 
         MySingleton.getInstance(getApplicationContext()).addToRequestQueue(request);
 
+    }
+
+    private void dispadapter(ArrayList<Period> listperiods) {
+        periodAdapter = new PeriodAdapter(getApplicationContext(),listperiods);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerView.setAdapter(periodAdapter);
+        periodAdapter.notifyDataSetChanged();
     }
 }

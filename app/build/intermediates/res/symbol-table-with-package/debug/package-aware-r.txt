@@ -989,14 +989,18 @@ drawable user
 drawable userlogo
 id ALT
 id CTRL
+id ClassTimeText
 id ConfirmPassword
+id CourseTitleText
 id EmailEdit
 id FUNCTION
 id InChargeSelect
 id META
 id NameEdit
 id PasswordEdit
+id PeriodRecycler
 id RegisterTxt
+id RoomNumText
 id SHIFT
 id SYM
 id SignUpBtn
@@ -1274,6 +1278,7 @@ layout activity_room
 layout activity_scatter
 layout activity_student_home
 layout activity_teacher_home
+layout classlist
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
