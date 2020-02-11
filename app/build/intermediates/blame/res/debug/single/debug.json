@@ -1144,6 +1144,10 @@
         "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\9796688045f98fa6a3ee6ff773d09df1\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
+        "merged": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_add_white_24dp.xml.flat",
+        "source": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\src\\main\\res\\drawable\\ic_add_white_24dp.xml"
+    },
+    {
         "merged": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\9796688045f98fa6a3ee6ff773d09df1\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
     },

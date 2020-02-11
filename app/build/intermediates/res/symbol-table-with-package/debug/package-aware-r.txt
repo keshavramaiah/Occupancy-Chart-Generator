@@ -965,6 +965,7 @@ drawable grad1
 drawable grad3
 drawable grad4
 drawable grad5
+drawable ic_add_white_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable loginbutton_selector
@@ -988,6 +989,7 @@ drawable tooltip_frame_light
 drawable user
 drawable userlogo
 id ALT
+id BookClassCard
 id CTRL
 id ClassTimeText
 id ConfirmPassword
@@ -1088,6 +1090,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab
 id fill
 id fill_horizontal
 id fill_vertical

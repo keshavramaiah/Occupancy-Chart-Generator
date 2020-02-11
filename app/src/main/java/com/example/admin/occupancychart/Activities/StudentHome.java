@@ -4,10 +4,12 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -31,6 +33,7 @@ import static java.security.AccessController.getContext;
 
 public class StudentHome extends AppCompatActivity {
     private int day;
+    private FloatingActionButton fab;
     private ProgressDialog dialog;
     private SharedPreferences pref ;
     private String classes[],periods[];
@@ -46,10 +49,11 @@ public class StudentHome extends AppCompatActivity {
         setContentView(R.layout.activity_student_home);
         Calendar calendar = Calendar.getInstance();
         period=new Period();
+        fab = findViewById(R.id.fab);
         listOfPeriods=new ArrayList<>();
         recyclerView = findViewById(R.id.PeriodRecycler);
         dialog= new ProgressDialog(StudentHome.this);
-        day = calendar.get(Calendar.DAY_OF_WEEK)-1;
+        day = calendar.get(Calendar.DAY_OF_WEEK)-2;
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode;
         roll=pref.getString("ROLL",null);
         if(roll==null)
@@ -82,6 +86,12 @@ public class StudentHome extends AppCompatActivity {
                 }
                 else
                 {
+                    String cr = rep.substring(0,1);
+                    if(cr.equals("1"))
+                    {
+                        fab.setVisibility(View.VISIBLE);
+                    }
+                    rep = rep.substring(1);
                     String room = rep.substring(0,4);
                     rep = rep.substring(4);
                    // Toast.makeText(getApplicationContext(),rep.toString(), Toast.LENGTH_LONG).show();
