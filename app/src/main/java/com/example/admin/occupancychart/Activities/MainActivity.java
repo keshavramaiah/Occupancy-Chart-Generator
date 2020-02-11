@@ -59,8 +59,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         OnChartValueSelectedListener,View.OnClickListener {
 
     private PieChart chart;
-    private SeekBar seekBarX, seekBarY;
-    private TextView tvX, tvY;
     private SharedPreferences pref ;
     private SharedPreferences.Editor editor ;
     private ArrayList<Period>listOfPeriods;
@@ -90,16 +88,16 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         else
             getData();
         Toast.makeText(getApplicationContext(),"Welcome back "+name,Toast.LENGTH_SHORT).show();
-        tvX = findViewById(R.id.tvXMax);
-        tvY = findViewById(R.id.tvYMax);
+//        tvX = findViewById(R.id.tvXMax);
+//        tvY = findViewById(R.id.tvYMax);
 
         b=findViewById(R.id.next);
 
-        seekBarX = findViewById(R.id.seekBar1);
-        seekBarY = findViewById(R.id.seekBar2);
-
-        seekBarX.setOnSeekBarChangeListener(this);
-        seekBarY.setOnSeekBarChangeListener(this);
+//        seekBarX = findViewById(R.id.seekBar1);
+//        seekBarY = findViewById(R.id.seekBar2);
+//
+//        seekBarX.setOnSeekBarChangeListener(this);
+//        seekBarY.setOnSeekBarChangeListener(this);
 
         chart = findViewById(R.id.chart1);
         chart.setUsePercentValues(true);
@@ -132,8 +130,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         // add a selection listener
         chart.setOnChartValueSelectedListener(this);
 
-        seekBarX.setProgress(4);
-        seekBarY.setProgress(10);
+//        seekBarX.setProgress(4);
+//        seekBarY.setProgress(10);
 
         chart.animateY(1400, Easing.EaseInOutQuad);
         // chart.spin(2000, 0, 360);
@@ -163,9 +161,9 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
-        tvX.setText(String.valueOf(seekBarX.getProgress()));
-        tvY.setText(String.valueOf(seekBarY.getProgress()));
+//
+//        tvX.setText(String.valueOf(seekBarX.getProgress()));
+//        tvY.setText(String.valueOf(seekBarY.getProgress()));
 
 
     }
@@ -177,7 +175,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
     private SpannableString generateCenterSpannableText() {
 
-        SpannableString s = new SpannableString("Work Load\ndeveloped by Keshav");
+        SpannableString s = new SpannableString("Work Load\n For today");
         s.setSpan(new RelativeSizeSpan(1.7f), 0, 9, 0);
         s.setSpan(new StyleSpan(Typeface.NORMAL), 9, s.length() - 10, 0);
         s.setSpan(new ForegroundColorSpan(Color.GRAY), 9, s.length() - 10, 0);
@@ -292,7 +290,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                 //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 //System.out.println(name);
                 System.out.println("Response is : " + response);
-
+                listOfPeriods = new ArrayList<>();
                 rep= response.split("@");
                 String[] classrooms = new String[rep.length];
                 for(int i =0;i<rep.length;i++) {
