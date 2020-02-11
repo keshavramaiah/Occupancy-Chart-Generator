@@ -31,6 +31,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.admin.occupancychart.Models.Constants;
 import com.example.admin.occupancychart.Models.MySingleton;
+import com.example.admin.occupancychart.Models.Period;
 import com.example.admin.occupancychart.R;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -62,8 +63,10 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     private TextView tvX, tvY;
     private SharedPreferences pref ;
     private SharedPreferences.Editor editor ;
+    private ArrayList<Period>listOfPeriods;
     private ProgressDialog dialog;
     private String name;
+    private String[] times = new String[]{"0","8:40am-9:30am","9:30am-10:20am","10:20am-11:10am","11:20am-12:10pm","12:10pm-1:00pm","2:00pm-2:50pm","2:50pm-3:40pm","3:40pm-4:30pm"};
     String[] rep;
     private int day;
     Button b;
@@ -225,7 +228,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         entries.add(new PieEntry(60,"Nepal"));
         entries.add(new PieEntry(16,"USA"));*/
 
-        PieDataSet dataSet = new PieDataSet(entries, "Period For today");
+        PieDataSet dataSet = new PieDataSet(entries, "Periods For today");
 
         dataSet.setDrawIcons(false);
 
@@ -287,11 +290,26 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                 //Response will contain the classes for today separated by commas
                 // Eg - "1;Software eng" - 1 stands for period
                 //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
-                //System.out.println("Response is : " + response);
+                //System.out.println(name);
+                System.out.println("Response is : " + response);
 
-                rep= response.split(",");
+                rep= response.split("@");
+                String[] classrooms = new String[rep.length];
+                for(int i =0;i<rep.length;i++) {
+                    if (rep[i].length() >= 5) {
+                        //System.out.println(rep[i].substring(0,4));
+                        classrooms[i]= rep[i].substring(0,4);
+                        rep[i] = rep[i].substring(5);
+                        //System.out.println(rep[i]);'
+                        String[] temp = rep[i].split(";");
+                        String period=temp[0];
+                        String c =temp[1];
+                        period=times[Integer.valueOf(period)];
+                        listOfPeriods.add(new Period(classrooms[i],period,c));
+                    }
+                }
                 //Toast.makeText(getApplicationContext(),rep[0],Toast.LENGTH_LONG).show();
-                setData();
+               setData();
 
 
             }
@@ -308,6 +326,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                 Map <String,String> params  = new HashMap<String,String>();
                 params.put(Constants.KEY_DAY,String.valueOf(day));
                 params.put(Constants.KEY_NAME,name);
+
                 return params;
             }
         };

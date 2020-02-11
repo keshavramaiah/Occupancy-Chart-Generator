@@ -37,7 +37,6 @@ public class StudentHome extends AppCompatActivity {
     private ProgressDialog dialog;
     private SharedPreferences pref ;
     private String classes[],periods[];
-    private Period period;
     private ArrayList<Period>listOfPeriods;
     private PeriodAdapter periodAdapter;
     private RecyclerView recyclerView;
@@ -48,7 +47,6 @@ public class StudentHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_home);
         Calendar calendar = Calendar.getInstance();
-        period=new Period();
         fab = findViewById(R.id.fab);
         listOfPeriods=new ArrayList<>();
         recyclerView = findViewById(R.id.PeriodRecycler);
