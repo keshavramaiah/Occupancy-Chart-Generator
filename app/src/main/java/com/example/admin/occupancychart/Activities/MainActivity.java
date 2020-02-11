@@ -11,6 +11,8 @@ import android.net.Uri;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
@@ -32,6 +34,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.example.admin.occupancychart.Models.Constants;
 import com.example.admin.occupancychart.Models.MySingleton;
 import com.example.admin.occupancychart.Models.Period;
+import com.example.admin.occupancychart.Models.PeriodAdapter;
 import com.example.admin.occupancychart.R;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -55,8 +58,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener,
-        OnChartValueSelectedListener,View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     private PieChart chart;
     private SharedPreferences pref ;
@@ -64,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     private ArrayList<Period>listOfPeriods;
     private ProgressDialog dialog;
     private String name;
+    private PeriodAdapter periodAdapter;
+    private RecyclerView recyclerView;
     private String[] times = new String[]{"0","8:40am-9:30am","9:30am-10:20am","10:20am-11:10am","11:20am-12:10pm","12:10pm-1:00pm","2:00pm-2:50pm","2:50pm-3:40pm","3:40pm-4:30pm"};
     String[] rep;
     private int day;
@@ -80,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         setTitle("PieChartActivity");
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode;
         name=pref.getString("Name",null);
+        recyclerView = findViewById(R.id.TeacherRecycler);
         if(name==null)
         {
             Toast.makeText(getApplicationContext(),"Registration error,please register again",Toast.LENGTH_SHORT).show();
@@ -128,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         // chart.setDrawUnitsInChart(true);
 
         // add a selection listener
-        chart.setOnChartValueSelectedListener(this);
+      //  chart.setOnChartValueSelectedListener(this);
 
 //        seekBarX.setProgress(4);
 //        seekBarY.setProgress(10);
@@ -152,21 +157,19 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         chart.setEntryLabelTextSize(12f);
 
 
-        b.setOnClickListener(this);
-
 
     }
 
 
 
-    @Override
-    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+//    @Override
+//    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+////
+////        tvX.setText(String.valueOf(seekBarX.getProgress()));
+////        tvY.setText(String.valueOf(seekBarY.getProgress()));
 //
-//        tvX.setText(String.valueOf(seekBarX.getProgress()));
-//        tvY.setText(String.valueOf(seekBarY.getProgress()));
-
-
-    }
+//
+//    }
 
 
     protected void saveToGallery() {
@@ -185,31 +188,10 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         return s;
     }
 
-
-    @Override
-    public void onValueSelected(Entry e, Highlight h) {
-
-        if (e == null)
-            return;
-        Log.i("VAL SELECTED",
-                "Value: " + e.getY() + ", index: " + h.getX()
-                        + ", DataSet index: " + h.getDataSetIndex());
-    }
-
-    @Override
-    public void onNothingSelected() {
-        Log.i("PieChart", "nothing selected");
-    }
-
-    @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {}
-
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {}
+//
 
     private void setData() {
         ArrayList<PieEntry> entries = new ArrayList<>();
-        //String[] parties={"Network Security","Pattern Recognition","Cryptography","Mentoring"};
         // NOTE: The order of the entries when being added to the entries array determines their position around the center of
         // the chart.
         Log.d("CHECK",rep.length+" ");
@@ -220,13 +202,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             entries.add(new PieEntry(Integer.valueOf(temp[0]),temp[1]));
         }
 
-       /*entries.add(new PieEntry(25,"Pakistan"));
-        entries.add(new PieEntry(10,"Africa"));
-        entries.add(new PieEntry(26,"India"));
-        entries.add(new PieEntry(60,"Nepal"));
-        entries.add(new PieEntry(16,"USA"));*/
 
-        PieDataSet dataSet = new PieDataSet(entries, "Periods For today");
+        PieDataSet dataSet = new PieDataSet(entries, "Periods");
 
         dataSet.setDrawIcons(false);
 
@@ -271,12 +248,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
     }
 
-    @Override
-    public void onClick(View view) {
-
-        Intent i=new Intent(MainActivity.this,RoomActivity.class);
-        startActivity(i);
-    }
     private void getData() {
 
 
@@ -297,7 +268,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                     if (rep[i].length() >= 5) {
                         //System.out.println(rep[i].substring(0,4));
                         classrooms[i]= rep[i].substring(0,4);
-                        rep[i] = rep[i].substring(5);
+                        rep[i] = rep[i].substring(5,rep[i].length()-1);
                         //System.out.println(rep[i]);'
                         String[] temp = rep[i].split(";");
                         String period=temp[0];
@@ -306,6 +277,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                         listOfPeriods.add(new Period(classrooms[i],period,c));
                     }
                 }
+                dispadapter(listOfPeriods);
                 //Toast.makeText(getApplicationContext(),rep[0],Toast.LENGTH_LONG).show();
                setData();
 
@@ -331,5 +303,11 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         MySingleton.getInstance(getApplicationContext()).addToRequestQueue(request);
 
+    }
+    private void dispadapter(ArrayList<Period> listperiods) {
+        periodAdapter = new PeriodAdapter(getApplicationContext(),listperiods);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerView.setAdapter(periodAdapter);
+        periodAdapter.notifyDataSetChanged();
     }
 }
