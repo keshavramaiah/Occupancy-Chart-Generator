@@ -73,27 +73,11 @@ public class Register extends AppCompatActivity {
                 email = emailedit.getText().toString().trim();
                 password = passwordedit.getText().toString().trim();
                 confirmpassword = passconfirmedit.getText().toString().trim();
-                if((name.length()>0 || rollname.getText().toString().length()>0) && email.length()>0 && password.length()> 0 && confirmpassword.length()>0) {
-
-                    if (email.contains("@")) {
-                        if (password.equals(confirmpassword)) {
-                            signup.setEnabled(false);
-                                insertnewuser();
-                                //Toast.makeText(getApplicationContext(), "Passwords match", Toast.LENGTH_SHORT).show();
-
-                        }else {
-                            Toast.makeText(getApplicationContext(), "Passwords don't match", Toast.LENGTH_SHORT).show();
-                            passwordedit.requestFocus();
-                        }
-                    }
-                    else
-                    {
-                        Toast.makeText(getApplicationContext(), "Please enter a valid email id", Toast.LENGTH_SHORT).show();
-                        emailedit.requestFocus();
-                    }
-                }else {
-                    Toast.makeText(getApplicationContext(), "Please fill in all the fields", Toast.LENGTH_SHORT).show();
+                if(validate(name,rollname.toString(),email,password,confirmpassword))
+                {
+                    insertnewuser();
                 }
+
             }
         });
         student.setOnClickListener(new View.OnClickListener() {
@@ -147,6 +131,33 @@ public class Register extends AppCompatActivity {
             }
         });
 
+    }
+
+    public boolean validate(String name, String rollname, String email, String password, String confirmpassword) {
+        if((name.length()>0 || rollname.length()>0) && email.length()>0 && password.length()> 0 && confirmpassword.length()>0) {
+
+            if (email.contains("@")) {
+                if (password.equals(confirmpassword)) {
+                    signup.setEnabled(false);
+                    return true;
+                    //Toast.makeText(getApplicationContext(), "Passwords match", Toast.LENGTH_SHORT).show();
+
+                }else {
+                    Toast.makeText(getApplicationContext(), "Passwords don't match", Toast.LENGTH_SHORT).show();
+                    passwordedit.requestFocus();
+                    return false;
+                }
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "Please enter a valid email id", Toast.LENGTH_SHORT).show();
+                emailedit.requestFocus();
+                return false;
+            }
+        }else {
+            Toast.makeText(getApplicationContext(), "Please fill in all the fields", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
 
