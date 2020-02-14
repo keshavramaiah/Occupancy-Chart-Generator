@@ -48,14 +48,7 @@ public class BookRoom extends AppCompatActivity {
         day = calendar.get(Calendar.DAY_OF_WEEK)-2;
         periods = new ArrayList<>();
         listOfPeriods = new ArrayList<>();
-        periods.add(1);
-        periods.add(2);
-        periods.add(3);
-        periods.add(4);
-        periods.add(5);
-        periods.add(7);
-        periods.add(8);
-        periods.add(9);
+
         spinner = findViewById(R.id.BookRoomSpinner);
         dialog= new ProgressDialog(BookRoom.this);
         recyclerView = findViewById(R.id.BookRoomRecycler);
@@ -70,6 +63,7 @@ public class BookRoom extends AppCompatActivity {
                 System.out.println("room is " + roomselection);
                 if(position!=0)
                 {
+
                     dialog.setMessage("Getting data, please wait.");
                     dialog.show();
                     getData();
@@ -88,8 +82,29 @@ public class BookRoom extends AppCompatActivity {
 
     private void getData() {
 
-
-        StringRequest request = new StringRequest(Request.Method.POST, Constants.BOOKROOM_URL, new Response.Listener<String>() {
+            if(periods!=null) {
+                periods.clear();
+                periods.add(1);
+                periods.add(2);
+                periods.add(3);
+                periods.add(4);
+                periods.add(5);
+                periods.add(7);
+                periods.add(8);
+                periods.add(9);
+            }
+            else
+            {
+                periods.add(1);
+                periods.add(2);
+                periods.add(3);
+                periods.add(4);
+                periods.add(5);
+                periods.add(7);
+                periods.add(8);
+                periods.add(9);
+            }
+            StringRequest request = new StringRequest(Request.Method.POST, Constants.BOOKROOM_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 if (dialog.isShowing())
@@ -99,17 +114,25 @@ public class BookRoom extends AppCompatActivity {
                 //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 System.out.println("get book room data Response is : " + response.toString());
                 String[] p  = response.split(";");
-                    for (int i = 0; i < p.length; i++) {
-                        periods.remove(Integer.valueOf(p[i]));
-                    }
+                for (String s : p) {
+                    periods.remove(Integer.valueOf(s));
+                }
 
                     for (Integer period : periods) {
                         System.out.println(period);
                         String tmp = times[period - 1];
-                        listOfPeriods.add(new Period(roomselection, period + "hr", tmp));
+                        if(period==1)
+                            listOfPeriods.add(new Period(roomselection, period + "st hour", tmp));
+                        else if(period==2)
+                            listOfPeriods.add(new Period(roomselection, period + "nd hour", tmp));
+                        else if(period==3)
+                            listOfPeriods.add(new Period(roomselection, period + "rd hour", tmp));
+                        else
+                            listOfPeriods.add(new Period(roomselection, period + "th hour", tmp));
 
                     }
                     recyclerView.refreshDrawableState();
+                    System.out.println(listOfPeriods.size());
                     dispadapter(listOfPeriods);
             }
         }, new Response.ErrorListener() {
