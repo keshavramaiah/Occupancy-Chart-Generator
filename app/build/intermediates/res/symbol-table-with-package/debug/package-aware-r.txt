@@ -990,6 +990,8 @@ drawable user
 drawable userlogo
 id ALT
 id BookClassCard
+id BookRoomRecycler
+id BookRoomSpinner
 id CTRL
 id ClassTimeText
 id ConfirmPassword
@@ -1272,6 +1274,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_bar
+layout activity_book_room
 layout activity_bubble
 layout activity_in_charge_home
 layout activity_login

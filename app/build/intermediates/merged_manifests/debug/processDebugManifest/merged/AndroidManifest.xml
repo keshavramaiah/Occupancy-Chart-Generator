@@ -19,6 +19,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.admin.occupancychart.Activities.BookRoom" />
         <activity android:name="com.example.admin.occupancychart.Activities.MyMarkerView" />
         <activity android:name="com.example.admin.occupancychart.Activities.RoomActivity" />
         <activity android:name="com.example.admin.occupancychart.Activities.InChargeHome" />
