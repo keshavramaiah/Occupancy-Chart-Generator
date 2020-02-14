@@ -17,11 +17,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.example.admin.occupancychart.Activities.MyMarkerView" />
         <activity android:name="com.example.admin.occupancychart.Activities.RoomActivity" />
         <activity android:name="com.example.admin.occupancychart.Activities.InChargeHome" />
-        <activity android:name="com.example.admin.occupancychart.Activities.TeacherHome" />
         <activity android:name="com.example.admin.occupancychart.Activities.StudentHome" />
         <activity android:name="com.example.admin.occupancychart.Activities.MainActivity" />
         <activity android:name="com.example.admin.occupancychart.Activities.Register" />

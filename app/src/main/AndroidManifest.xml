@@ -14,7 +14,6 @@
         <activity android:name=".Activities.MyMarkerView"></activity>
         <activity android:name=".Activities.RoomActivity" />
         <activity android:name=".Activities.InChargeHome" />
-        <activity android:name=".Activities.TeacherHome" />
         <activity android:name=".Activities.StudentHome" />
         <activity android:name=".Activities.MainActivity" />
         <activity android:name=".Activities.Register" />

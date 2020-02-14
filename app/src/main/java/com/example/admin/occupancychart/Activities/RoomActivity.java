@@ -79,6 +79,10 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
 
                    // getData();
                 }
+                else
+                {
+                    ChoiceSpinner.setVisibility(View.INVISIBLE);
+                }
             }
 
             @Override
@@ -91,18 +95,29 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i==2)
                 {
-                    //DaySpinner.setVisibility(View.VISIBLE);
-                    chart.setVisibility(View.VISIBLE);
+                    DaySpinner.setVisibility(View.INVISIBLE);
                     dialog.setMessage("Getting data, please wait.");
                     dialog.show();
                     getData();
+                    chart.notifyDataSetChanged();
+                    chart.setVisibility(View.VISIBLE);
+
                 }
                 if(i==1)
                 {
+
                     DaySpinner.setVisibility(View.VISIBLE);
                     dialog.setMessage("Getting data, please wait.");
                     dialog.show();
                     getDailyData();
+                    chart.notifyDataSetChanged();
+                    chart.setVisibility(View.VISIBLE);
+
+                }
+                if(i==0)
+                {
+                    chart.refreshDrawableState();
+                    chart.setVisibility(View.INVISIBLE);
                 }
             }
 
@@ -311,13 +326,13 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
                     dialog.dismiss();
 
                 //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
-                // System.out.println("Response is : " + response.toString());
+                System.out.println("Get data Response is : " + response.toString());
                 //rep contains an array of strings
                 // each item will be a number followed by a comma and a number
                 // Eg: 1,5  - corresponds to monday there are 5 periods
                 String[] rep= response.split(";");
                 for (int i = 0; i < rep.length; i++) {
-                    String temp[]=rep[i].split(",");
+                    String[] temp = rep[i].split(",");
                     values.add(new Entry(Integer.parseInt(temp[0]),Integer.parseInt(temp[1])));
                 }
                 setData();
@@ -353,7 +368,7 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
                     dialog.dismiss();
 
                 //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
-                // System.out.println("Response is : " + response.toString());
+                 System.out.println("get daily data Response is : " + response.toString());
                 //rep contains an array of strings
                 // each item will be a number followed by a comma and a number
                 // Eg: 1,5  - corresponds to monday there are 5 periods

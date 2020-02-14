@@ -1281,7 +1281,6 @@ layout activity_register
 layout activity_room
 layout activity_scatter
 layout activity_student_home
-layout activity_teacher_home
 layout classlist
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

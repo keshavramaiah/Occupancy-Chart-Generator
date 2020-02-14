@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.icu.text.UnicodeSetSpanner;
 import android.net.Uri;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -262,25 +263,30 @@ public class MainActivity extends AppCompatActivity {
                 //System.out.println(name);
                 System.out.println("Response is : " + response);
                 listOfPeriods = new ArrayList<>();
-                rep= response.split("@");
-                String[] classrooms = new String[rep.length];
-                for(int i =0;i<rep.length;i++) {
-                    if (rep[i].length() >= 5) {
-                        //System.out.println(rep[i].substring(0,4));
-                        classrooms[i]= rep[i].substring(0,4);
-                        rep[i] = rep[i].substring(5,rep[i].length()-1);
-                        //System.out.println(rep[i]);'
-                        String[] temp = rep[i].split(";");
-                        String period=temp[0];
-                        String c =temp[1];
-                        period=times[Integer.valueOf(period)];
-                        listOfPeriods.add(new Period(classrooms[i],period,c));
+                if(response.length()>5) {
+                    rep = response.split("@");
+                    String[] classrooms = new String[rep.length];
+                    for (int i = 0; i < rep.length; i++) {
+                        if (rep[i].length() >= 5) {
+                            //System.out.println(rep[i].substring(0,4));
+                            classrooms[i] = rep[i].substring(0, 4);
+                            rep[i] = rep[i].substring(5, rep[i].length() - 1);
+                            //System.out.println(rep[i]);'
+                            String[] temp = rep[i].split(";");
+                            String period = temp[0];
+                            String c = temp[1];
+                            period = times[Integer.valueOf(period)];
+                            listOfPeriods.add(new Period(classrooms[i], period, c));
+                        }
                     }
+                    dispadapter(listOfPeriods);
+                    //Toast.makeText(getApplicationContext(),rep[0],Toast.LENGTH_LONG).show();
+                    setData();
                 }
-                dispadapter(listOfPeriods);
-                //Toast.makeText(getApplicationContext(),rep[0],Toast.LENGTH_LONG).show();
-               setData();
-
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"No classes today ",Toast.LENGTH_SHORT).show();
+                }
 
             }
         }, new Response.ErrorListener() {
