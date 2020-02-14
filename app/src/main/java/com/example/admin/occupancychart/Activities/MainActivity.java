@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Calendar calendar = Calendar.getInstance();
         dialog= new ProgressDialog(MainActivity.this);
-        day = calendar.get(Calendar.DAY_OF_WEEK)-1;
+        day = calendar.get(Calendar.DAY_OF_WEEK)-2;
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
@@ -268,19 +268,24 @@ public class MainActivity extends AppCompatActivity {
                     String[] classrooms = new String[rep.length];
                     for (int i = 0; i < rep.length; i++) {
                         if (rep[i].length() >= 5) {
-                            //System.out.println(rep[i].substring(0,4));
+                            System.out.println(rep[i].substring(0,4));
                             classrooms[i] = rep[i].substring(0, 4);
                             rep[i] = rep[i].substring(5, rep[i].length() - 1);
-                            //System.out.println(rep[i]);'
+                            System.out.println(rep[i]);
                             String[] temp = rep[i].split(";");
                             String period = temp[0];
                             String c = temp[1];
                             period = times[Integer.valueOf(period)];
+                            System.out.println("Classroom is " +classrooms[i]);
+                            System.out.println("Period is " + period);
+                            System.out.println("C is " +c);
                             listOfPeriods.add(new Period(classrooms[i], period, c));
                         }
                     }
                     dispadapter(listOfPeriods);
                     //Toast.makeText(getApplicationContext(),rep[0],Toast.LENGTH_LONG).show();
+
+                    //The rep no longer contains your req info, check listofperiods
                     setData();
                 }
                 else

@@ -16,6 +16,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.admin.occupancychart.Models.BookRoomAdapter;
 import com.example.admin.occupancychart.Models.Constants;
 import com.example.admin.occupancychart.Models.MySingleton;
 import com.example.admin.occupancychart.Models.Period;
@@ -37,7 +38,7 @@ public class BookRoom extends AppCompatActivity {
     private ArrayList<Period>listOfPeriods;
     private String[] times = new String[]{"8:40am-9:30am","9:30am-10:20am","10:20am-11:10am","11:20am-12:10pm","12:10pm-1:00pm","0","2:00pm-2:50pm","2:50pm-3:40pm","3:40pm-4:30pm"};
     private ArrayList<Integer> periods;
-    private PeriodAdapter periodAdapter;
+    private BookRoomAdapter periodAdapter;
     private RecyclerView recyclerView;
 
     @Override
@@ -156,7 +157,7 @@ public class BookRoom extends AppCompatActivity {
 
     }
     private void dispadapter(ArrayList<Period> listperiods) {
-        periodAdapter = new PeriodAdapter(getApplicationContext(),listperiods);
+        periodAdapter = new BookRoomAdapter(getApplicationContext(),listperiods,periods);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(periodAdapter);
         periodAdapter.notifyDataSetChanged();

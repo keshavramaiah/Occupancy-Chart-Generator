@@ -51,7 +51,7 @@ public class StudentHome extends AppCompatActivity {
         listOfPeriods=new ArrayList<>();
         recyclerView = findViewById(R.id.PeriodRecycler);
         dialog= new ProgressDialog(StudentHome.this);
-        day = calendar.get(Calendar.DAY_OF_WEEK)-2;
+        day = calendar.get(Calendar.DAY_OF_WEEK)-1;
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode;
         roll=pref.getString("ROLL",null);
         if(roll==null)
@@ -75,7 +75,7 @@ public class StudentHome extends AppCompatActivity {
 
 
                 String rep =  response.toString();
-               //System.out.println("Response is " + rep);
+               System.out.println("Response is " + rep);
                 if(rep.length()==4)
                     Toast.makeText(getApplicationContext(),"No classes today",Toast.LENGTH_SHORT).show();
                 if (rep.contains("Error"))
