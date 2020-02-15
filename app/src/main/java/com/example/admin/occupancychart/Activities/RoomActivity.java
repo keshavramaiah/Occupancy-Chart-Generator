@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -44,8 +45,10 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class RoomActivity extends AppCompatActivity implements OnChartValueSelectedListener {
@@ -54,6 +57,7 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
     private ProgressDialog dialog;
     ArrayList<Entry> values = new ArrayList<>();
     private LineChart chart;
+    private ListView listView;
     int currentHourIn24Format;
     String room[]={"None","A203","A204","A303","A304","C203","C204"};
     String choice[]={"None","DayWise","Weekly"};
@@ -62,6 +66,7 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
+        listView = findViewById(R.id.ExtraClassesList);
         dialog= new ProgressDialog(RoomActivity.this);
         Calendar rightNow = Calendar.getInstance();
         currentHourIn24Format = rightNow.get(Calendar.HOUR_OF_DAY);
@@ -72,7 +77,9 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
 
         ChoiceSpinner.setVisibility(View.INVISIBLE);
         DaySpinner.setVisibility(View.INVISIBLE);
-
+        dialog.setMessage("Please wait");
+        dialog.show();
+        getExtra();
         RoomSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -82,6 +89,7 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
                         dialog.show();
                         clearTemp();
                     }
+
                     ChoiceSpinner.setVisibility(View.VISIBLE);
                     roomselection = room[i];
                     System.out.println("room is " + roomselection);
@@ -419,6 +427,43 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
                     dialog.dismiss();
 
 
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
+                System.out.println("Error is " + error.toString());
+            }
+        })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map <String,String> params  = new HashMap<String,String>();
+                return params;
+            }
+        };
+
+        MySingleton.getInstance(getApplicationContext()).addToRequestQueue(request);
+
+    }
+    private void getExtra() {
+
+
+        StringRequest request = new StringRequest(Request.Method.POST, Constants.EXTRACLASSES_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if (dialog.isShowing())
+                    dialog.dismiss();
+                String[] rep = response.split(":");
+
+                List<String> list = new ArrayList<String>(Arrays.asList(rep));
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                        getApplicationContext(),
+                        android.R.layout.simple_list_item_1,
+                        list );
+
+                listView.setAdapter(arrayAdapter);
 
             }
         }, new Response.ErrorListener() {

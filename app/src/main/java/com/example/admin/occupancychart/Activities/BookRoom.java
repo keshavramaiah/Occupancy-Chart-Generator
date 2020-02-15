@@ -36,7 +36,7 @@ public class BookRoom extends AppCompatActivity {
     private ProgressDialog dialog;
     private int day;
     private ArrayList<Period>listOfPeriods;
-    private String[] times = new String[]{"8:40am-9:30am","9:30am-10:20am","10:20am-11:10am","11:20am-12:10pm","12:10pm-1:00pm","0","2:00pm-2:50pm","2:50pm-3:40pm","3:40pm-4:30pm"};
+    private String[] times = new String[]{"8:40am-9:30am","9:30am-10:20am","10:20am-11:10am","11:20am-12:10pm","12:10pm-1:00pm","0","2:00pm-2:50pm","2:50pm-3:40pm","3:40pm-4:30pm","4:30pm-5:30pm"};
     private ArrayList<Integer> periods;
     private BookRoomAdapter periodAdapter;
     private RecyclerView recyclerView;
@@ -93,6 +93,7 @@ public class BookRoom extends AppCompatActivity {
                 periods.add(7);
                 periods.add(8);
                 periods.add(9);
+                periods.add(10);
             }
             else
             {
@@ -104,6 +105,7 @@ public class BookRoom extends AppCompatActivity {
                 periods.add(7);
                 periods.add(8);
                 periods.add(9);
+                periods.add(10);
             }
             StringRequest request = new StringRequest(Request.Method.POST, Constants.BOOKROOM_URL, new Response.Listener<String>() {
             @Override
