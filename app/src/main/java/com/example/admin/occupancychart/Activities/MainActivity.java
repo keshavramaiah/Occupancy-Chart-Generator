@@ -261,7 +261,8 @@ public class MainActivity extends AppCompatActivity {
                 // Eg - "1;Software eng" - 1 stands for period
                 //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 //System.out.println(name);
-                System.out.println("Response is : " + response);
+                //System.out.println("Name is " + name);
+                System.out.println("Teacher Response is : " + response);
                 listOfPeriods = new ArrayList<>();
                 if(response.length()>5) {
                     rep = response.split("@");
@@ -286,7 +287,7 @@ public class MainActivity extends AppCompatActivity {
                     //Toast.makeText(getApplicationContext(),rep[0],Toast.LENGTH_LONG).show();
 
                     //The rep no longer contains your req info, check listofperiods
-                    setData();
+                   // setData();
                 }
                 else
                 {
