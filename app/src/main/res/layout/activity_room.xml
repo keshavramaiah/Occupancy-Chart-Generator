@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/colorPrimaryDark"
     android:layout_height="match_parent"
     tools:context=".Activities.RoomActivity">
   <Spinner
@@ -35,6 +36,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/ExtraClassesText"
+    android:textColor="#FFFFFF"
     android:text="Extra classes beyond 4"
     android:layout_below="@id/chart1"
     android:layout_margin="20dp"
@@ -43,8 +45,7 @@
     android:textStyle="bold"/>
 <ListView
     android:layout_width="match_parent"
-
     android:layout_height="wrap_content"
     android:layout_below="@id/ExtraClassesText"
-  android:id="@+id/ExtraClassesList"/>
+    android:id="@+id/ExtraClassesList"/>
 </RelativeLayout>

@@ -999,7 +999,10 @@ id ConfText
 id ConfirmButton
 id ConfirmPassword
 id CourseTitleText
+id DashboardTeacherTxt
 id EmailEdit
+id ExtraClassesList
+id ExtraClassesText
 id FUNCTION
 id InChargeSelect
 id META
