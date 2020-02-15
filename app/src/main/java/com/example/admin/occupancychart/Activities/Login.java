@@ -69,10 +69,11 @@ public class Login extends AppCompatActivity {
 
                 email = loginedit.getText().toString().trim();
                 password = passwordedit.getText().toString().trim();
-                if (email.length()>0 && password.length()> 0 )
+                if(validate(email,password))
                 {
                     login();
                 }
+
 
             }
         });
@@ -85,7 +86,7 @@ public class Login extends AppCompatActivity {
 temp.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        startActivity(new Intent(getApplicationContext(),RoomActivity.class));
     }
 });
         if(status!=null) {
@@ -98,6 +99,10 @@ temp.setOnClickListener(new View.OnClickListener() {
                 startActivity(new Intent(getApplicationContext(), RoomActivity.class));
             }
         }
+    }
+
+    public boolean validate(String email, String password) {
+        return email.length() > 0 && password.length() > 0;
     }
 
     private void login() {

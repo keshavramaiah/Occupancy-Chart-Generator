@@ -19,10 +19,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.admin.occupancychart.Activities.BookConfirm" />
+        <activity android:name="com.example.admin.occupancychart.Activities.BookRoom" />
         <activity android:name="com.example.admin.occupancychart.Activities.MyMarkerView" />
         <activity android:name="com.example.admin.occupancychart.Activities.RoomActivity" />
         <activity android:name="com.example.admin.occupancychart.Activities.InChargeHome" />
-        <activity android:name="com.example.admin.occupancychart.Activities.TeacherHome" />
         <activity android:name="com.example.admin.occupancychart.Activities.StudentHome" />
         <activity android:name="com.example.admin.occupancychart.Activities.MainActivity" />
         <activity android:name="com.example.admin.occupancychart.Activities.Register" />

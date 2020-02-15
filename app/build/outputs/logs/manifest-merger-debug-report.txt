@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-33:12
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-34:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\531345bccdc4c7ec0c0de9372ebd843e\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\9796688045f98fa6a3ee6ff773d09df1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\901b65725de56b241b728b1822767def\AndroidManifest.xml:2:1-11:12
@@ -27,20 +27,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\achut\.gradle\
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\c00b698e33bf99c628f8edce32330008\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\73e1bdcab49aaa4a701d1db438855e65\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e776131039207b03cdf09589e7871877\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-34:12
 	package
 		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:3:5-47
 		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-33:12
+		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-34:12
 		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-33:12
+		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-34:12
 		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:11-69
@@ -49,7 +49,7 @@ ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\
 	android:name
 		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:7:5-31:19
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:7:5-32:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\901b65725de56b241b728b1822767def\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\901b65725de56b241b728b1822767def\AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\66a14c105473251313597622fdaa7766\AndroidManifest.xml:9:5-20
@@ -70,60 +70,64 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\achut\.gradle\
 		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
 		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:13:9-40
+activity#com.example.admin.occupancychart.Activities.BookConfirm
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:14:9-69
+	android:name
+		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:14:19-57
+activity#com.example.admin.occupancychart.Activities.BookRoom
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:15:9-57
+	android:name
+		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:15:19-54
 activity#com.example.admin.occupancychart.Activities.MyMarkerView
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:14:9-70
-	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:14:19-58
-activity#com.example.admin.occupancychart.Activities.RoomActivity
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:15:9-61
-	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:15:19-58
-activity#com.example.admin.occupancychart.Activities.InChargeHome
 ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:16:9-61
 	android:name
 		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:16:19-58
-activity#com.example.admin.occupancychart.Activities.TeacherHome
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:17:9-60
+activity#com.example.admin.occupancychart.Activities.RoomActivity
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:17:9-61
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:17:19-57
+		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:17:19-58
+activity#com.example.admin.occupancychart.Activities.InChargeHome
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:18:9-61
+	android:name
+		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:18:19-58
 activity#com.example.admin.occupancychart.Activities.StudentHome
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:18:9-60
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:19:9-60
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:18:19-57
+		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:19:19-57
 activity#com.example.admin.occupancychart.Activities.MainActivity
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:19:9-61
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:20:9-61
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:19:19-58
+		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:20:19-58
 activity#com.example.admin.occupancychart.Activities.Register
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:20:9-57
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:21:9-57
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:20:19-54
+		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:21:19-54
 activity#com.example.admin.occupancychart.Activities.Login
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:21:9-27:20
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:22:9-28:20
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:21:19-51
+		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:22:19-51
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:22:13-26:29
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:23:13-27:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:23:17-69
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:24:17-69
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:23:25-66
+		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:24:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:25:17-77
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:26:17-77
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:25:27-74
+		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:26:27-74
 activity#com.example.admin.occupancychart.Activities.BarActivity
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:28:9-60
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:29:9-60
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:28:19-57
+		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:29:19-57
 activity#com.example.admin.occupancychart.Activities.ScatterActivity
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:29:9-64
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:30:9-64
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:29:19-61
+		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:30:19-61
 activity#com.example.admin.occupancychart.Activities.BubbleActivity
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:30:9-63
+ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:31:9-63
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:30:19-60
+		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:31:19-60
 uses-sdk
 INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml

@@ -73,27 +73,11 @@ public class Register extends AppCompatActivity {
                 email = emailedit.getText().toString().trim();
                 password = passwordedit.getText().toString().trim();
                 confirmpassword = passconfirmedit.getText().toString().trim();
-                if((name.length()>0 || rollname.getText().toString().length()>0) && email.length()>0 && password.length()> 0 && confirmpassword.length()>0) {
-
-                    if (email.contains("@")) {
-                        if (password.equals(confirmpassword)) {
-                            signup.setEnabled(false);
-                                insertnewuser();
-                                //Toast.makeText(getApplicationContext(), "Passwords match", Toast.LENGTH_SHORT).show();
-
-                        }else {
-                            Toast.makeText(getApplicationContext(), "Passwords don't match", Toast.LENGTH_SHORT).show();
-                            passwordedit.requestFocus();
-                        }
-                    }
-                    else
-                    {
-                        Toast.makeText(getApplicationContext(), "Please enter a valid email id", Toast.LENGTH_SHORT).show();
-                        emailedit.requestFocus();
-                    }
-                }else {
-                    Toast.makeText(getApplicationContext(), "Please fill in all the fields", Toast.LENGTH_SHORT).show();
+                if(validate(name,rollname.toString(),email,password,confirmpassword))
+                {
+                    insertnewuser();
                 }
+
             }
         });
         student.setOnClickListener(new View.OnClickListener() {
@@ -149,6 +133,33 @@ public class Register extends AppCompatActivity {
 
     }
 
+    public boolean validate(String name, String rollname, String email, String password, String confirmpassword) {
+        if((name.length()>0 || rollname.length()>0) && email.length()>0 && password.length()> 0 && confirmpassword.length()>0) {
+
+            if (email.contains("@")) {
+                if (password.equals(confirmpassword)) {
+                    signup.setEnabled(false);
+                    return true;
+                    //Toast.makeText(getApplicationContext(), "Passwords match", Toast.LENGTH_SHORT).show();
+
+                }else {
+                    Toast.makeText(getApplicationContext(), "Passwords don't match", Toast.LENGTH_SHORT).show();
+                    passwordedit.requestFocus();
+                    return false;
+                }
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "Please enter a valid email id", Toast.LENGTH_SHORT).show();
+                emailedit.requestFocus();
+                return false;
+            }
+        }else {
+            Toast.makeText(getApplicationContext(), "Please fill in all the fields", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
 
     private void insertnewuser()
     {
@@ -158,38 +169,48 @@ public class Register extends AppCompatActivity {
         StringRequest request = new StringRequest(Request.Method.POST, Constants.REG_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-               // Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.INVISIBLE);
+                // Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 System.out.println("Response is : " + response.toString());
-                if(response.toString().contains("Values inserted")) {
-                    signup.setBackgroundColor(getColor(R.color.white_greyish));
-                    progressBar.setVisibility(View.INVISIBLE);
-                    editor.putString("Status","In");
-                    editor.putString(Constants.KEY_EMAIL, email);
-                    editor.commit();
-                    if(teacherclick) {
-                        editor.putInt("Type",2);
-                        editor.putString("Name",rollname.getText().toString());
-                        editor.apply();
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    }
-                    else if (studclick) {
-                        editor.putInt("Type",1);
-                        startActivity(new Intent(getApplicationContext(), StudentHome.class));
+                signup.setBackgroundColor(getColor(R.color.white_greyish));
+                if (response.length() == 0) {
+                        Toast.makeText(getApplicationContext(),"Invalid name/rollno",Toast.LENGTH_SHORT).show();
+                } else {
 
-                    }else if (inchargeclick) {
-                        editor.putInt("Type",3);
-                        startActivity(new Intent(getApplicationContext(), RoomActivity.class));
-                    }
-                }
-                else if(response.toString().contains("Email already exists"))
-                {
+                    if (response.toString().contains("Values inserted")) {
+                        // signup.setBackgroundColor(getColor(R.color.white_greyish));
+                        editor.putString("Status", "In");
+                        editor.putString(Constants.KEY_EMAIL, email);
+                        editor.commit();
+                        if (teacherclick) {
+                            editor.putInt("Type", 2);
+                            editor.putString("Name", rollname.getText().toString());
+                            editor.apply();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        } else if (studclick) {
+                            editor.putInt("Type", 1);
+                            editor.putString("ROLL", name);
+                            editor.apply();
+                            startActivity(new Intent(getApplicationContext(), StudentHome.class));
 
-                    signup.setBackgroundColor(getColor(R.color.button_selectorcolor));
-                    progressBar.setVisibility(View.INVISIBLE);
-                    Toast.makeText(getApplicationContext(),"Email already exits,try logging in",Toast.LENGTH_SHORT).show();
-                    signup.setBackgroundColor(getColor(R.color.white_greyish));
+                        } else if (inchargeclick) {
+                            editor.putInt("Type", 3);
+                            editor.putString("Name", name);
+                            editor.apply();
+                            startActivity(new Intent(getApplicationContext(), RoomActivity.class));
+                        }
+                    } else if (response.toString().contains("Email already exists")) {
+
+                        progressBar.setVisibility(View.INVISIBLE);
+                        Toast.makeText(getApplicationContext(), "Email already exits,try logging in", Toast.LENGTH_SHORT).show();
+                        signup.setBackgroundColor(getColor(R.color.white_greyish));
+                    } else if (response.toString().contains("InvalidStudent")) {
+                        Toast.makeText(getApplicationContext(), "Invalid Roll no provided", Toast.LENGTH_SHORT).show();
+                        signup.setBackgroundColor(getColor(R.color.white_greyish));
+                        progressBar.setVisibility(View.INVISIBLE);
+                    }
+                    signup.setEnabled(true);
                 }
-                signup.setEnabled(true);
             }
         }, new Response.ErrorListener() {
             @Override
