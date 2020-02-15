@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.icu.text.UnicodeSetSpanner;
 import android.net.Uri;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Period>listOfPeriods;
     private ProgressDialog dialog;
     private String name;
+    private FloatingActionButton floatingActionButton;
     private PeriodAdapter periodAdapter;
     private RecyclerView recyclerView;
     private String[] times = new String[]{"0","8:40am-9:30am","9:30am-10:20am","10:20am-11:10am","11:20am-12:10pm","12:10pm-1:00pm","2:00pm-2:50pm","2:50pm-3:40pm","3:40pm-4:30pm"};
@@ -82,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        floatingActionButton = findViewById(R.id.TeacherBookRoomBtn);
         setTitle("PieChartActivity");
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode;
         name=pref.getString("Name",null);
@@ -158,7 +161,12 @@ public class MainActivity extends AppCompatActivity {
         chart.setEntryLabelTextSize(12f);
 
 
-
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),BookRoom.class));
+            }
+        });
     }
 
 
