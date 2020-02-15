@@ -44,6 +44,7 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,6 +54,7 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
     private ProgressDialog dialog;
     ArrayList<Entry> values = new ArrayList<>();
     private LineChart chart;
+    int currentHourIn24Format;
     String room[]={"None","A203","A204","A303","A304","C203","C204"};
     String choice[]={"None","DayWise","Weekly"};
     String days[]={"Monday","Tuesday","Wednesday","Thursday","Friday"};
@@ -61,7 +63,9 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
         dialog= new ProgressDialog(RoomActivity.this);
-
+        Calendar rightNow = Calendar.getInstance();
+        currentHourIn24Format = rightNow.get(Calendar.HOUR_OF_DAY);
+        System.out.println("Current hour is " + currentHourIn24Format);
         RoomSpinner=findViewById(R.id.s1);
         ChoiceSpinner=findViewById(R.id.s2);
         DaySpinner=findViewById(R.id.s3);
@@ -73,6 +77,11 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i!=0) {
+                    if(currentHourIn24Format>16) {
+                        dialog.setMessage("Please wait");
+                        dialog.show();
+                        clearTemp();
+                    }
                     ChoiceSpinner.setVisibility(View.VISIBLE);
                     roomselection = room[i];
                     System.out.println("room is " + roomselection);
@@ -392,6 +401,37 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map <String,String> params  = new HashMap<String,String>();
                 params.put(Constants.KEY_ROOM,roomselection);
+                return params;
+            }
+        };
+
+        MySingleton.getInstance(getApplicationContext()).addToRequestQueue(request);
+
+    }
+
+    private void clearTemp() {
+
+
+        StringRequest request = new StringRequest(Request.Method.POST, Constants.CLEARTEMP_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if (dialog.isShowing())
+                    dialog.dismiss();
+
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
+                System.out.println("Error is " + error.toString());
+            }
+        })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map <String,String> params  = new HashMap<String,String>();
                 return params;
             }
         };

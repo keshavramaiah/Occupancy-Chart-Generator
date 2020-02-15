@@ -51,9 +51,10 @@ public class StudentHome extends AppCompatActivity {
         listOfPeriods=new ArrayList<>();
         recyclerView = findViewById(R.id.PeriodRecycler);
         dialog= new ProgressDialog(StudentHome.this);
-        day = calendar.get(Calendar.DAY_OF_WEEK)-1;
+        day = calendar.get(Calendar.DAY_OF_WEEK)-2;
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode;
         roll=pref.getString("ROLL",null);
+        System.out.println("Roll is " + roll);
         if(roll==null)
         {
             Toast.makeText(getApplicationContext(),"Registration error,please register again",Toast.LENGTH_SHORT).show();
@@ -61,7 +62,15 @@ public class StudentHome extends AppCompatActivity {
         }
         else
             getData();
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),BookRoom.class));
+            }
+        });
     }
+
     public void getData()
     {
         dialog.setMessage("Getting data, please wait.");
@@ -75,20 +84,23 @@ public class StudentHome extends AppCompatActivity {
 
 
                 String rep =  response.toString();
-               System.out.println("Response is " + rep);
-                if(rep.length()==4)
-                    Toast.makeText(getApplicationContext(),"No classes today",Toast.LENGTH_SHORT).show();
-                if (rep.contains("Error"))
+                System.out.println("Rep length" + rep.length());
+                String cr = rep.substring(0,1);
+                if(cr.equals("1"))
                 {
-                    Toast.makeText(getApplicationContext(),"An error as occured",Toast.LENGTH_SHORT).show();
+                    fab.setVisibility(View.VISIBLE);
                 }
-                else
+               System.out.println("Response is " + rep);
+                if(rep.length()==5)
+                    Toast.makeText(getApplicationContext(),"No classes today",Toast.LENGTH_SHORT).show();
+                else if (rep.contains("Error"))
                 {
-                    String cr = rep.substring(0,1);
-                    if(cr.equals("1"))
-                    {
-                        fab.setVisibility(View.VISIBLE);
-                    }
+                    Toast.makeText(getApplicationContext(),"An error as occurred",Toast.LENGTH_SHORT).show();
+                }
+                else if
+                (rep.length()>5)
+                {
+                    System.out.println("Inside else");
                     rep = rep.substring(1);
                     String room = rep.substring(0,4);
                     rep = rep.substring(4);

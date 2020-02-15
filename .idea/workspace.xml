@@ -10,29 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c30ce0bf-26f5-442c-99ea-f3ad2968df67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/BookConfirm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_book_confirm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/admin/occupancychart/Activities/MainActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/admin/occupancychart/Activities/MainActivity$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/admin/occupancychart/Activities/MainActivity$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/admin/occupancychart/Activities/MainActivity$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/BookRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/BookRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Models/BookRoomAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Models/BookRoomAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/RoomActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/RoomActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/StudentHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/StudentHome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Models/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Models/Constants.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -92,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="266" column="34" selection-start-line="266" selection-start-column="34" selection-end-line="266" selection-end-column="34" />
+            <state relative-caret-position="-39">
+              <caret line="263" column="18" selection-start-line="263" selection-start-column="18" selection-end-line="263" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -101,22 +85,73 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/Register.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3094">
-              <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+            <state relative-caret-position="35">
+              <caret line="176" column="112" selection-start-line="176" selection-start-column="112" selection-end-line="176" selection-end-column="112" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#12666#12667#0" expanded="true" />
-                <element signature="e#12697#12698#0" expanded="true" />
+                <element signature="e#12958#12959#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/RoomActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="84" column="20" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/StudentHome.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="126" column="30" lean-forward="true" selection-start-line="64" selection-start-column="4" selection-end-line="132" selection-end-column="5" />
+            <state relative-caret-position="114">
+              <caret line="46" column="43" lean-forward="true" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
+              <folding>
+                <element signature="e#2638#2822#0" expanded="true" />
+                <element signature="e#2821#2822#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Models/BookRoomAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="551">
+              <caret line="80" column="32" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/BookRoom.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2061">
+              <caret line="159" column="120" selection-start-line="159" selection-start-column="120" selection-end-line="159" selection-end-column="120" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Models/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="45" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/Login.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="817">
+              <caret line="88" column="69" selection-start-line="88" selection-start-column="69" selection-end-line="88" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -190,19 +225,19 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/com/example/admin/occupancychart/Activities/RegisterTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/example/admin/occupancychart/Activities/RegisterTest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/Register.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/Login.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_book_room.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/RoomActivity.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/example/admin/occupancychart/Activities/LoginTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Models/PeriodAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/StudentHome.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/BookRoom.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Models/BookRoomAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_book_confirm.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Models/Constants.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/BookConfirm.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/StudentHome.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/Register.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Models/Constants.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/Login.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/RoomActivity.java" />
       </list>
     </option>
   </component>
@@ -734,7 +769,21 @@
       <option name="project" value="LOCAL" />
       <updated>1581679656753</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Book room">
+      <created>1581739880874</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1581739880874</updated>
+    </task>
+    <task id="LOCAL-00034" summary="fixes">
+      <created>1581740818771</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1581740818771</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -774,7 +823,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24026845" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.24026845" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -816,7 +865,9 @@
     <MESSAGE value="Teacher page changes" />
     <MESSAGE value="Unit testing" />
     <MESSAGE value="Room activity fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Room activity fixes" />
+    <MESSAGE value="Book room" />
+    <MESSAGE value="fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1059,13 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="61" column="47" lean-forward="true" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/com/example/admin/occupancychart/Activities/LoginTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1080,13 +1124,6 @@
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/RoomActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2115">
-          <caret line="326" selection-start-line="326" selection-end-line="326" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Models/PeriodAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1113,25 +1150,6 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="266" column="34" selection-start-line="266" selection-start-column="34" selection-end-line="266" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/Register.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3094">
-          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#12666#12667#0" expanded="true" />
-            <element signature="e#12697#12698#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/BookConfirm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -1145,16 +1163,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Models/Constants.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="47" />
+        <state relative-caret-position="-39">
+          <caret line="263" column="18" selection-start-line="263" selection-start-column="18" selection-end-line="263" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Models/BookRoomAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
+        <state relative-caret-position="551">
           <caret line="80" column="32" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1162,17 +1180,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/StudentHome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="46" column="43" lean-forward="true" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
+          <folding>
+            <element signature="e#2638#2822#0" expanded="true" />
+            <element signature="e#2821#2822#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="176" column="112" selection-start-line="176" selection-start-column="112" selection-end-line="176" selection-end-column="112" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#12958#12959#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Models/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="45" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="88" column="69" selection-start-line="88" selection-start-column="69" selection-end-line="88" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/BookRoom.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1472">
+        <state relative-caret-position="2061">
           <caret line="159" column="120" selection-start-line="159" selection-start-column="120" selection-end-line="159" selection-end-column="120" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/StudentHome.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/occupancychart/Activities/RoomActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="126" column="30" lean-forward="true" selection-start-line="64" selection-start-column="4" selection-end-line="132" selection-end-column="5" />
+        <state relative-caret-position="510">
+          <caret line="84" column="20" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
         </state>
       </provider>
     </entry>

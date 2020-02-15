@@ -170,47 +170,47 @@ public class Register extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 progressBar.setVisibility(View.INVISIBLE);
-               // Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
+                // Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 System.out.println("Response is : " + response.toString());
                 signup.setBackgroundColor(getColor(R.color.white_greyish));
-                if(response.toString().contains("Values inserted")) {
-                   // signup.setBackgroundColor(getColor(R.color.white_greyish));
-                    editor.putString("Status","In");
-                    editor.putString(Constants.KEY_EMAIL, email);
-                    editor.commit();
-                    if(teacherclick) {
-                        editor.putInt("Type",2);
-                        editor.putString("Name",rollname.getText().toString());
-                        editor.apply();
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    }
-                    else if (studclick) {
-                        editor.putInt("Type",1);
-                        editor.putString("ROLL",name);
-                        editor.apply();
-                        startActivity(new Intent(getApplicationContext(), StudentHome.class));
+                if (response.length() == 0) {
+                        Toast.makeText(getApplicationContext(),"Invalid name/rollno",Toast.LENGTH_SHORT).show();
+                } else {
 
-                    }else if (inchargeclick) {
-                        editor.putInt("Type",3);
-                        editor.putString("Name",name);
-                        editor.apply();
-                        startActivity(new Intent(getApplicationContext(), RoomActivity.class));
-                    }
-                }
-                else if(response.toString().contains("Email already exists"))
-                {
+                    if (response.toString().contains("Values inserted")) {
+                        // signup.setBackgroundColor(getColor(R.color.white_greyish));
+                        editor.putString("Status", "In");
+                        editor.putString(Constants.KEY_EMAIL, email);
+                        editor.commit();
+                        if (teacherclick) {
+                            editor.putInt("Type", 2);
+                            editor.putString("Name", rollname.getText().toString());
+                            editor.apply();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        } else if (studclick) {
+                            editor.putInt("Type", 1);
+                            editor.putString("ROLL", name);
+                            editor.apply();
+                            startActivity(new Intent(getApplicationContext(), StudentHome.class));
 
-                    progressBar.setVisibility(View.INVISIBLE);
-                    Toast.makeText(getApplicationContext(),"Email already exits,try logging in",Toast.LENGTH_SHORT).show();
-                    signup.setBackgroundColor(getColor(R.color.white_greyish));
+                        } else if (inchargeclick) {
+                            editor.putInt("Type", 3);
+                            editor.putString("Name", name);
+                            editor.apply();
+                            startActivity(new Intent(getApplicationContext(), RoomActivity.class));
+                        }
+                    } else if (response.toString().contains("Email already exists")) {
+
+                        progressBar.setVisibility(View.INVISIBLE);
+                        Toast.makeText(getApplicationContext(), "Email already exits,try logging in", Toast.LENGTH_SHORT).show();
+                        signup.setBackgroundColor(getColor(R.color.white_greyish));
+                    } else if (response.toString().contains("InvalidStudent")) {
+                        Toast.makeText(getApplicationContext(), "Invalid Roll no provided", Toast.LENGTH_SHORT).show();
+                        signup.setBackgroundColor(getColor(R.color.white_greyish));
+                        progressBar.setVisibility(View.INVISIBLE);
+                    }
+                    signup.setEnabled(true);
                 }
-                else if(response.toString().contains("InvalidStudent"))
-                {
-                    Toast.makeText(getApplicationContext(),"Invalid Roll no provided",Toast.LENGTH_SHORT).show();
-                    signup.setBackgroundColor(getColor(R.color.white_greyish));
-                    progressBar.setVisibility(View.INVISIBLE);
-                }
-                signup.setEnabled(true);
             }
         }, new Response.ErrorListener() {
             @Override

@@ -86,7 +86,7 @@ public class Login extends AppCompatActivity {
 temp.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        startActivity(new Intent(getApplicationContext(),BookRoom.class));
+        startActivity(new Intent(getApplicationContext(),RoomActivity.class));
     }
 });
         if(status!=null) {
