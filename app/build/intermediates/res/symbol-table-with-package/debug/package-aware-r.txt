@@ -993,7 +993,10 @@ id BookClassCard
 id BookRoomRecycler
 id BookRoomSpinner
 id CTRL
+id CancelButton
 id ClassTimeText
+id ConfText
+id ConfirmButton
 id ConfirmPassword
 id CourseTitleText
 id EmailEdit
@@ -1274,6 +1277,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_bar
+layout activity_book_confirm
 layout activity_book_room
 layout activity_bubble
 layout activity_in_charge_home

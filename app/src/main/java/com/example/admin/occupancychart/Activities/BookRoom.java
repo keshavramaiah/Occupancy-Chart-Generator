@@ -157,7 +157,7 @@ public class BookRoom extends AppCompatActivity {
 
     }
     private void dispadapter(ArrayList<Period> listperiods) {
-        periodAdapter = new BookRoomAdapter(getApplicationContext(),listperiods,periods);
+        periodAdapter = new BookRoomAdapter(getApplicationContext(),listperiods,periods,roomselection,String.valueOf(day));
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(periodAdapter);
         periodAdapter.notifyDataSetChanged();

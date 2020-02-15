@@ -232,6 +232,10 @@
         "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\531345bccdc4c7ec0c0de9372ebd843e\\res\\drawable-hdpi-v4\\design_ic_visibility.png"
     },
     {
+        "merged": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_book_confirm.xml.flat",
+        "source": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\src\\main\\res\\layout\\activity_book_confirm.xml"
+    },
+    {
         "merged": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\9796688045f98fa6a3ee6ff773d09df1\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },

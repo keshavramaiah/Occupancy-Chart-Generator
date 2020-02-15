@@ -15,6 +15,7 @@ public class Constants {
     public  static final String TEACHERDATA_URL = DB_URL + "getTeacherData.php";
     public  static final String DAILYDATA_URL = DB_URL + "getDailyData.php";
     public  static final String BOOKROOM_URL = DB_URL + "bookroom.php";
+    public  static final String CONFIRMROOM_URL = DB_URL + "ConfirmRoom.php";
     public  static final String KEY_NAME = "name";
     public  static final String KEY_ROOM = "Room";
     public  static final String KEY_EMAIL = "email";
@@ -22,4 +23,5 @@ public class Constants {
     public  static final String KEY_TYPE="type";
     public  static final String KEY_DAY="day";
     public  static final String KEY_ROLL="roll";
+    public  static final String KEY_PERIOD="Period";
 }

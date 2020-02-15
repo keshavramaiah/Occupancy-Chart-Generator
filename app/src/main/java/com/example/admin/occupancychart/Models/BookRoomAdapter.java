@@ -1,6 +1,7 @@
 package com.example.admin.occupancychart.Models;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.admin.occupancychart.Activities.BookConfirm;
 import com.example.admin.occupancychart.Activities.BookRoom;
 import com.example.admin.occupancychart.R;
 
@@ -19,12 +21,16 @@ public class BookRoomAdapter extends RecyclerView.Adapter <BookRoomAdapter.BookR
     public Context context;
     ArrayList<Period> periods;
      ArrayList<Integer> periodNumbers;
+     String room;
+     String day ;
 
 
-    public BookRoomAdapter(Context context, ArrayList<Period> periods,ArrayList<Integer> periodNumbers) {
+    public BookRoomAdapter(Context context, ArrayList<Period> periods, ArrayList<Integer> periodNumbers, String roomselection, String s) {
         this.context = context;
         this.periods = periods;
         this.periodNumbers=periodNumbers;
+        room = roomselection;
+        day = s;
     }
 
     public BookRoomHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,7 +41,7 @@ public class BookRoomAdapter extends RecyclerView.Adapter <BookRoomAdapter.BookR
     @Override
     public void onBindViewHolder(@NonNull BookRoomHolder holder, int position) {
         Period period = periods.get(position);
-        holder.setdetails(period,context,position,periodNumbers);
+        holder.setdetails(period,context,position,periodNumbers,room,day);
     }
 
     @Override
@@ -44,6 +50,7 @@ public class BookRoomAdapter extends RecyclerView.Adapter <BookRoomAdapter.BookR
     }
     public static class BookRoomHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView title,roomno,time;
+        private String room,day;
         private ArrayList<Integer> p;
         public BookRoomHolder(@NonNull View itemView) {
             super(itemView);
@@ -56,18 +63,23 @@ public class BookRoomAdapter extends RecyclerView.Adapter <BookRoomAdapter.BookR
             roomno.setOnClickListener(this);
         }
 
-        public void setdetails(Period period, Context context, int pos, ArrayList<Integer> periodNumbers) {
+        public void setdetails(Period period, Context context, int pos, ArrayList<Integer> periodNumbers, String room, String day) {
             title.setText(period.getTitle());
             roomno.setText(period.getRoom());
             time.setText(period.getTime());
             p = periodNumbers;
+            this.room = room;
+            this.day = day;
 
         }
 
         @Override
         public void onClick(View v) {
-            //Toast.makeText(context,periodNumbers.get(pos),Toast.LENGTH_SHORT).show();
-            System.out.println(p.get(getAdapterPosition()));
+            Intent  i = new Intent(v.getContext(), BookConfirm.class);
+            i.putExtra("Room",room);
+            i.putExtra("Day",day);
+            i.putExtra("Period",p.get(getAdapterPosition()));
+            v.getContext().startActivity(i);
         }
     }
 }
