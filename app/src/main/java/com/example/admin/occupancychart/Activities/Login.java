@@ -33,7 +33,7 @@ public class Login extends AppCompatActivity {
     private TextView register;
     private Button loginbtn,temp;
     private ConstraintLayout mainLayout;
-    private ProgressBar progressBar;
+    //private ProgressBar progressBar;
     private SharedPreferences pref ;
     private SharedPreferences.Editor editor ;
     private AnimationDrawable animationDrawable;
@@ -55,7 +55,7 @@ public class Login extends AppCompatActivity {
         passwordedit = findViewById(R.id.password);
         register = findViewById(R.id.RegisterTxt);
         temp = findViewById(R.id.Temp);
-        progressBar = findViewById(R.id.loading);
+        //progressBar = findViewById(R.id.loading);
         mainLayout = findViewById(R.id.container);
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode;
         editor = pref.edit();
@@ -69,10 +69,23 @@ public class Login extends AppCompatActivity {
 
                 email = loginedit.getText().toString().trim();
                 password = passwordedit.getText().toString().trim();
-                if(validate(email,password))
+                if(email.length()==0&&password.length()==0)
                 {
-                    login();
+                    Toast.makeText(getApplicationContext(),"Please fill in all the fields",Toast.LENGTH_SHORT).show();
                 }
+                if(email.length()==0)
+                {
+                    Toast.makeText(getApplicationContext(),"Enter email",Toast.LENGTH_SHORT).show();
+                }
+                else if(password.length()==0)
+                {
+                    Toast.makeText(getApplicationContext(),"Enter password",Toast.LENGTH_SHORT).show();
+                }
+                else if(validate(email,password))
+                {
+                    //login();
+                }
+
 
 
             }
@@ -106,7 +119,7 @@ temp.setOnClickListener(new View.OnClickListener() {
     }
 
     private void login() {
-        progressBar.setVisibility(View.VISIBLE);
+        //progressBar.setVisibility(View.VISIBLE);
         loginbtn.setEnabled(false);
 
         StringRequest request = new StringRequest(Request.Method.POST, Constants.LOGIN_URL, new Response.Listener<String>() {
@@ -115,7 +128,7 @@ temp.setOnClickListener(new View.OnClickListener() {
                 //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 //System.out.println("Response is : " + response.toString());
                 if (response.toString().contains("Student")) {
-                    progressBar.setVisibility(View.INVISIBLE);
+                   // progressBar.setVisibility(View.INVISIBLE);
                     startActivity(new Intent(getApplicationContext(), StudentHome.class));
                     loginbtn.setEnabled(true);
                     editor.putString(Constants.KEY_EMAIL, email);
@@ -124,7 +137,7 @@ temp.setOnClickListener(new View.OnClickListener() {
                     editor.apply();
                 }
                 else if (response.toString().contains("Teacher")) {
-                    progressBar.setVisibility(View.INVISIBLE);
+                   // progressBar.setVisibility(View.INVISIBLE);
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     loginbtn.setEnabled(true);
                     editor.putString(Constants.KEY_EMAIL, email);
@@ -133,7 +146,7 @@ temp.setOnClickListener(new View.OnClickListener() {
                     editor.apply();
                 }
                 else if (response.toString().contains("InCharge")) {
-                    progressBar.setVisibility(View.INVISIBLE);
+                    //progressBar.setVisibility(View.INVISIBLE);
                     startActivity(new Intent(getApplicationContext(), RoomActivity.class));
                     loginbtn.setEnabled(true);
                     editor.putString(Constants.KEY_EMAIL, email);
@@ -143,7 +156,7 @@ temp.setOnClickListener(new View.OnClickListener() {
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Invalid Credentials", Toast.LENGTH_SHORT).show();
-                    progressBar.setVisibility(View.INVISIBLE);
+                    //progressBar.setVisibility(View.INVISIBLE);
                     loginbtn.setEnabled(true);
                 }
             }
@@ -152,7 +165,7 @@ temp.setOnClickListener(new View.OnClickListener() {
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
                 System.out.println("Error is " + error.toString());
-                progressBar.setVisibility(View.INVISIBLE);
+               // progressBar.setVisibility(View.INVISIBLE);
                 loginbtn.setEnabled(true);
             }
         })

@@ -51,7 +51,8 @@ public class StudentHome extends AppCompatActivity {
         listOfPeriods=new ArrayList<>();
         recyclerView = findViewById(R.id.PeriodRecycler);
         dialog= new ProgressDialog(StudentHome.this);
-        day = calendar.get(Calendar.DAY_OF_WEEK)-2;
+        day = calendar.get(Calendar.DAY_OF_WEEK)-1;
+        System.out.println("Day is " + day);
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode;
         roll=pref.getString("ROLL",null);
         System.out.println("Roll is " + roll);
