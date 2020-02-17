@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton floatingActionButton;
     private PeriodAdapter periodAdapter;
     private RecyclerView recyclerView;
-    private String[] times = new String[]{"0","8:40am-9:30am","9:30am-10:20am","10:20am-11:10am","11:20am-12:10pm","12:10pm-1:00pm","2:00pm-2:50pm","2:50pm-3:40pm","3:40pm-4:30pm"};
+    private String[] times = new String[]{"0","8:40am-9:30am","9:30am-10:20am","10:20am-11:10am","11:20am-12:10pm","12:10pm-1:00pm","2:00pm-2:50pm","2:50pm-3:40pm","3:40pm-4:30pm","4:30pm-5:30pm",};
     String[] rep;
     private int day;
     Button b;
@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         dialog= new ProgressDialog(MainActivity.this);
         day = calendar.get(Calendar.DAY_OF_WEEK)-1;
+        System.out.println("Day is " + day);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
@@ -204,11 +205,12 @@ public class MainActivity extends AppCompatActivity {
         // NOTE: The order of the entries when being added to the entries array determines their position around the center of
         // the chart.
         Log.d("CHECK",rep.length+" ");
-        for(int i=0;i<rep.length-1;i++)
+        for(int i=0;i<listOfPeriods.size();i++)
         {
-            String[] temp=rep[i].split(";");
+//            String[] temp=rep[i].split(";");
+
             //Toast.makeText(this,temp[0],Toast.LENGTH_LONG).show();
-            entries.add(new PieEntry(Integer.valueOf(temp[0]),temp[1]));
+            entries.add(new PieEntry(Integer.valueOf(1),listOfPeriods.get(i).getTitle()));
         }
 
 
@@ -295,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
                     //Toast.makeText(getApplicationContext(),rep[0],Toast.LENGTH_LONG).show();
 
                     //The rep no longer contains your req info, check listofperiods
-                   // setData();
+                   setData();
                 }
                 else
                 {

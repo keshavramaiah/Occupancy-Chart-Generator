@@ -257,6 +257,7 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
             set1.notifyDataSetChanged();
             chart.getData().notifyDataChanged();
             chart.notifyDataSetChanged();
+            Log.d("RR","1");
         } else {
             // create a dataset and give it a type
             set1 = new LineDataSet(values, "Number of Periods in a Particular day");
