@@ -89,7 +89,6 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
                         dialog.show();
                         clearTemp();
                     }
-
                     ChoiceSpinner.setVisibility(View.VISIBLE);
                     roomselection = room[i];
                     System.out.println("room is " + roomselection);
@@ -107,6 +106,7 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
 
             }
         });
+
         ChoiceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -455,6 +455,7 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
             public void onResponse(String response) {
                 if (dialog.isShowing())
                     dialog.dismiss();
+                System.out.println("Response is "+response);
                 String[] rep = response.split(":");
 
                 List<String> list = new ArrayList<String>(Arrays.asList(rep));
@@ -483,5 +484,44 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
 
         MySingleton.getInstance(getApplicationContext()).addToRequestQueue(request);
 
+    }
+
+
+    public String getExtracpy() {
+
+        final String[] rep1 = new String[1];
+        StringRequest request = new StringRequest(Request.Method.POST, Constants.EXTRACLASSES_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if (dialog.isShowing())
+                    dialog.dismiss();
+                String[] rep = response.split(":");
+                rep1[0] = response;
+                List<String> list = new ArrayList<String>(Arrays.asList(rep));
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                        getApplicationContext(),
+                        android.R.layout.simple_list_item_1,
+                        list );
+
+                listView.setAdapter(arrayAdapter);
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
+                System.out.println("Error is " + error.toString());
+            }
+        })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map <String,String> params  = new HashMap<String,String>();
+                return params;
+            }
+        };
+
+        MySingleton.getInstance(getApplicationContext()).addToRequestQueue(request);
+return rep1[0];
     }
 }
