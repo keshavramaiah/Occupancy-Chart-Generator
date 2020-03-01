@@ -62,7 +62,6 @@ private Button cancel,confirm;
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
                 System.out.println("Error is " + error.toString());
-                //progressBar.setVisibility(View.INVISIBLE);
             }
         })
         {

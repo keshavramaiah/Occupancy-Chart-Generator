@@ -24,6 +24,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,15 +47,8 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
-import com.github.mikephil.charting.highlight.Highlight;
-import com.github.mikephil.charting.interfaces.datasets.IDataSet;
-import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.utils.MPPointF;
-
-import java.lang.reflect.Array;
-import java.time.DayOfWeek;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -74,13 +68,14 @@ public class MainActivity extends AppCompatActivity {
     private String[] times = new String[]{"0","8:40am-9:30am","9:30am-10:20am","10:20am-11:10am","11:20am-12:10pm","12:10pm-1:00pm","2:00pm-2:50pm","2:50pm-3:40pm","3:40pm-4:30pm","4:30pm-5:30pm",};
     String[] rep;
     private int day;
-    Button b;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Calendar calendar = Calendar.getInstance();
         dialog= new ProgressDialog(MainActivity.this);
-        day = calendar.get(Calendar.DAY_OF_WEEK)-1;
+        //day = calendar.get(Calendar.DAY_OF_WEEK)-1;
+        day =  5;
         System.out.println("Day is " + day);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -98,16 +93,6 @@ public class MainActivity extends AppCompatActivity {
         else
             getData();
         Toast.makeText(getApplicationContext(),"Welcome back "+name,Toast.LENGTH_SHORT).show();
-//        tvX = findViewById(R.id.tvXMax);
-//        tvY = findViewById(R.id.tvYMax);
-
-        b=findViewById(R.id.next);
-
-//        seekBarX = findViewById(R.id.seekBar1);
-//        seekBarY = findViewById(R.id.seekBar2);
-//
-//        seekBarX.setOnSeekBarChangeListener(this);
-//        seekBarY.setOnSeekBarChangeListener(this);
 
         chart = findViewById(R.id.chart1);
         chart.setUsePercentValues(true);
@@ -134,18 +119,7 @@ public class MainActivity extends AppCompatActivity {
         chart.setRotationEnabled(true);
         chart.setHighlightPerTapEnabled(true);
 
-        // chart.setUnit(" €");
-        // chart.setDrawUnitsInChart(true);
-
-        // add a selection listener
-      //  chart.setOnChartValueSelectedListener(this);
-
-//        seekBarX.setProgress(4);
-//        seekBarY.setProgress(10);
-
         chart.animateY(1400, Easing.EaseInOutQuad);
-        // chart.spin(2000, 0, 360);
-
         Legend l = chart.getLegend();
         l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
         l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
@@ -154,10 +128,7 @@ public class MainActivity extends AppCompatActivity {
         l.setXEntrySpace(7f);
         l.setYEntrySpace(0f);
         l.setYOffset(0f);
-        //setData(10,40);
 
-
-        // entry label styling
         chart.setEntryLabelColor(Color.WHITE);
         chart.setEntryLabelTextSize(12f);
 
@@ -168,21 +139,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),BookRoom.class));
             }
         });
-    }
-
-
-
-//    @Override
-//    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-////
-////        tvX.setText(String.valueOf(seekBarX.getProgress()));
-////        tvY.setText(String.valueOf(seekBarY.getProgress()));
-//
-//
-//    }
-
-
-    protected void saveToGallery() {
 
     }
 
@@ -207,9 +163,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d("CHECK",rep.length+" ");
         for(int i=0;i<listOfPeriods.size();i++)
         {
-//            String[] temp=rep[i].split(";");
-
-            //Toast.makeText(this,temp[0],Toast.LENGTH_LONG).show();
             entries.add(new PieEntry(Integer.valueOf(1),listOfPeriods.get(i).getTitle()));
         }
 
@@ -267,11 +220,6 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 if (dialog.isShowing())
                     dialog.dismiss();
-                //Response will contain the classes for today separated by commas
-                // Eg - "1;Software eng" - 1 stands for period
-                //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
-                //System.out.println(name);
-                //System.out.println("Name is " + name);
                 System.out.println("Teacher Response is : " + response);
                 listOfPeriods = new ArrayList<>();
                 if(response.length()>5) {
@@ -294,9 +242,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                     dispadapter(listOfPeriods);
-                    //Toast.makeText(getApplicationContext(),rep[0],Toast.LENGTH_LONG).show();
-
-                    //The rep no longer contains your req info, check listofperiods
                    setData();
                 }
                 else
@@ -327,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void dispadapter(ArrayList<Period> listperiods) {
-        periodAdapter = new PeriodAdapter(getApplicationContext(),listperiods);
+        periodAdapter = new PeriodAdapter(getApplicationContext(),listperiods,true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(periodAdapter);
         periodAdapter.notifyDataSetChanged();

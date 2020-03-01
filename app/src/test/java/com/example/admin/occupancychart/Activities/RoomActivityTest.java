@@ -8,7 +8,7 @@ public class RoomActivityTest {
 
     @Test
     public void getExtracpy() {
-        RoomActivity roomActivity = new RoomActivity();
+     //   RoomActivity roomActivity = new RoomActivity();
         String input = "A303:C203:";
         boolean expected = true;
         boolean output = true;

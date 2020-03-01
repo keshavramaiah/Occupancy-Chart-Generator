@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_below="@id/DashboardTeacherTxt"
         android:layout_height="450dp"
-        android:layout_above="@+id/seekBar1" />
+        />
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/TeacherRecycler"
@@ -32,5 +32,4 @@
     android:layout_margin="20dp"
     android:src="@drawable/ic_add_white_24dp"
     android:id="@+id/TeacherBookRoomBtn"/>
-
 </RelativeLayout>

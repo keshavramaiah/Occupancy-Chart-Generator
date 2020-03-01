@@ -125,8 +125,6 @@ temp.setOnClickListener(new View.OnClickListener() {
         StringRequest request = new StringRequest(Request.Method.POST, Constants.LOGIN_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
-                //System.out.println("Response is : " + response.toString());
                 if (response.toString().contains("Student")) {
                     progressBar.setVisibility(View.INVISIBLE);
                     startActivity(new Intent(getApplicationContext(), StudentHome.class));

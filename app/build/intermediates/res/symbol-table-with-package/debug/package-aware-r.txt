@@ -968,6 +968,7 @@ drawable grad5
 drawable ic_add_white_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_remove_black_24dp
 drawable loginbutton_selector
 drawable navigation_empty_icon
 drawable notification_action_background
@@ -994,10 +995,13 @@ id BookRoomRecycler
 id BookRoomSpinner
 id CTRL
 id CancelButton
+id CancelClassButton
 id ClassTimeText
 id ConfText
 id ConfirmButton
+id ConfirmClassCancelButton
 id ConfirmPassword
+id ConfirmText
 id CourseTitleText
 id DashboardTeacherTxt
 id EmailEdit
@@ -1017,6 +1021,7 @@ id SignUpBtn
 id SignupProgress
 id StudentSelect
 id TeacherBookRoomBtn
+id TeacherCancelClassBtn
 id TeacherRecycler
 id TeacherSelect
 id Temp
@@ -1137,7 +1142,6 @@ id mini
 id multiply
 id navigation_header_container
 id never
-id next
 id none
 id normal
 id notification_background
@@ -1185,8 +1189,6 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
-id seekBar1
-id seekBar2
 id select_dialog_listview
 id shortcut
 id showCustom
@@ -1231,8 +1233,6 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id tvContent
-id tvXMax
-id tvYMax
 id uniform
 id up
 id useLogo
@@ -1280,17 +1280,15 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_bar
 layout activity_book_confirm
 layout activity_book_room
-layout activity_bubble
+layout activity_cancel_class
 layout activity_in_charge_home
 layout activity_login
 layout activity_main
 layout activity_my_marker_view
 layout activity_register
 layout activity_room
-layout activity_scatter
 layout activity_student_home
 layout classlist
 layout design_bottom_navigation_item

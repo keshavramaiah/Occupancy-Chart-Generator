@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\9796688045f98fa6a3ee6ff773d09df1\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\cf782968b693aa34a1a5222a7b9a5072\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\ab4da29714bba42cf74dcfb585c1503e\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\e330acc4f017e384768d4292a8e6f968\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

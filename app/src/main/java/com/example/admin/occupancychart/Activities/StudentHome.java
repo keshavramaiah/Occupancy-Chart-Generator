@@ -51,7 +51,7 @@ public class StudentHome extends AppCompatActivity {
         listOfPeriods=new ArrayList<>();
         recyclerView = findViewById(R.id.PeriodRecycler);
         dialog= new ProgressDialog(StudentHome.this);
-        day = calendar.get(Calendar.DAY_OF_WEEK)-1;
+        day = calendar.get(Calendar.DAY_OF_WEEK)-2;
         System.out.println("Day is " + day);
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode;
         roll=pref.getString("ROLL",null);
@@ -128,7 +128,6 @@ public class StudentHome extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
                 System.out.println("Error is " + error.toString());
-                //progressBar.setVisibility(View.INVISIBLE);
             }
         })
         {
@@ -146,7 +145,7 @@ public class StudentHome extends AppCompatActivity {
     }
 
     private void dispadapter(ArrayList<Period> listperiods) {
-        periodAdapter = new PeriodAdapter(getApplicationContext(),listperiods);
+        periodAdapter = new PeriodAdapter(getApplicationContext(),listperiods,false);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(periodAdapter);
         periodAdapter.notifyDataSetChanged();

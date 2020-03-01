@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\achut\\StudioProjects\\Occupancy-Chart-Generator\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-27.1.1.aar\\312e3da9e6d6024d88ae9bd04868580b\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-27.1.1.aar\\41475d91faa27049426c7312955898bf\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\9796688045f98fa6a3ee6ff773d09df1\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\achut\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\cf782968b693aa34a1a5222a7b9a5072\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

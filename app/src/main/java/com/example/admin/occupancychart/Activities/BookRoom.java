@@ -114,7 +114,6 @@ public class BookRoom extends AppCompatActivity {
                     dialog.dismiss();
                 if(listOfPeriods!=null)
                     listOfPeriods.clear();
-                //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 System.out.println("get book room data Response is : " + response.toString());
                 String[] p  = response.split(";");
                 for (String s : p) {
