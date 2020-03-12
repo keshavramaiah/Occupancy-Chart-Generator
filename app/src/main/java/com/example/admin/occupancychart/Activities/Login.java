@@ -55,7 +55,7 @@ public class Login extends AppCompatActivity {
         passwordedit = findViewById(R.id.password);
         register = findViewById(R.id.RegisterTxt);
         temp = findViewById(R.id.Temp);
-        progressBar = findViewById(R.id.loading);
+        progressBar = findViewById(R.id.pbar);
         mainLayout = findViewById(R.id.container);
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode;
         editor = pref.edit();
@@ -69,10 +69,23 @@ public class Login extends AppCompatActivity {
 
                 email = loginedit.getText().toString().trim();
                 password = passwordedit.getText().toString().trim();
-                if(validate(email,password))
+                if(email.length()==0&&password.length()==0)
+                {
+                    Toast.makeText(getApplicationContext(),"Please fill in all the fields",Toast.LENGTH_SHORT).show();
+                }
+                if(email.length()==0)
+                {
+                    Toast.makeText(getApplicationContext(),"Enter email",Toast.LENGTH_SHORT).show();
+                }
+                else if(password.length()==0)
+                {
+                    Toast.makeText(getApplicationContext(),"Enter password",Toast.LENGTH_SHORT).show();
+                }
+                else if(validate(email,password))
                 {
                     login();
                 }
+
 
 
             }
@@ -112,8 +125,6 @@ temp.setOnClickListener(new View.OnClickListener() {
         StringRequest request = new StringRequest(Request.Method.POST, Constants.LOGIN_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
-                //System.out.println("Response is : " + response.toString());
                 if (response.toString().contains("Student")) {
                     progressBar.setVisibility(View.INVISIBLE);
                     startActivity(new Intent(getApplicationContext(), StudentHome.class));
@@ -124,7 +135,7 @@ temp.setOnClickListener(new View.OnClickListener() {
                     editor.apply();
                 }
                 else if (response.toString().contains("Teacher")) {
-                    progressBar.setVisibility(View.INVISIBLE);
+                   progressBar.setVisibility(View.INVISIBLE);
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     loginbtn.setEnabled(true);
                     editor.putString(Constants.KEY_EMAIL, email);

@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+//apply plugin: 'org.sonarqube'
+//apply plugin: 'jacoco-android'
+apply plugin: 'com.justpinch.androidanalyzer'
 
 android {
     compileSdkVersion 27
@@ -40,5 +43,17 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation "com.android.support.test.espresso:espresso-intents:3.0.2"
     testImplementation 'org.robolectric:robolectric:4.3'
+
+}
+androidAnalyzer {
+    applicationId = 'com.domain.module'
+    projectName = 'My Module name'
+    projectVersion = '1.0.0'
+    detekt = true
+    unitTestCoverage = true
+    packageName = 'com.domain.module'
+    buildVariant = 'debug'
 }

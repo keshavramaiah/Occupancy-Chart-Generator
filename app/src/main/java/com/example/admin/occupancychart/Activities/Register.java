@@ -140,7 +140,6 @@ public class Register extends AppCompatActivity {
                 if (password.equals(confirmpassword)) {
                     signup.setEnabled(false);
                     return true;
-                    //Toast.makeText(getApplicationContext(), "Passwords match", Toast.LENGTH_SHORT).show();
 
                 }else {
                     Toast.makeText(getApplicationContext(), "Passwords don't match", Toast.LENGTH_SHORT).show();
@@ -178,7 +177,6 @@ public class Register extends AppCompatActivity {
                 } else {
 
                     if (response.toString().contains("Values inserted")) {
-                        // signup.setBackgroundColor(getColor(R.color.white_greyish));
                         editor.putString("Status", "In");
                         editor.putString(Constants.KEY_EMAIL, email);
                         editor.commit();

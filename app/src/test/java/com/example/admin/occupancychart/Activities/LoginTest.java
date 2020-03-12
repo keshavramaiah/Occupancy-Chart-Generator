@@ -9,7 +9,7 @@ public class LoginTest {
     @Test
     public void validate() {
         String email = "achuth2000@hotmail.com";
-        String password = "123456";
+        String password = "asdfgff";
         Boolean expected = true;
 
         Login logintest = new Login();

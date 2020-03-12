@@ -36,7 +36,7 @@ public class BookRoom extends AppCompatActivity {
     private ProgressDialog dialog;
     private int day;
     private ArrayList<Period>listOfPeriods;
-    private String[] times = new String[]{"8:40am-9:30am","9:30am-10:20am","10:20am-11:10am","11:20am-12:10pm","12:10pm-1:00pm","0","2:00pm-2:50pm","2:50pm-3:40pm","3:40pm-4:30pm"};
+    private String[] times = new String[]{"8:40am-9:30am","9:30am-10:20am","10:20am-11:10am","11:20am-12:10pm","12:10pm-1:00pm","0","2:00pm-2:50pm","2:50pm-3:40pm","3:40pm-4:30pm","4:30pm-5:30pm"};
     private ArrayList<Integer> periods;
     private BookRoomAdapter periodAdapter;
     private RecyclerView recyclerView;
@@ -46,7 +46,7 @@ public class BookRoom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_room);
         Calendar calendar = Calendar.getInstance();
-        day = calendar.get(Calendar.DAY_OF_WEEK)-2;
+        day = calendar.get(Calendar.DAY_OF_WEEK)-1;
         periods = new ArrayList<>();
         listOfPeriods = new ArrayList<>();
 
@@ -93,6 +93,7 @@ public class BookRoom extends AppCompatActivity {
                 periods.add(7);
                 periods.add(8);
                 periods.add(9);
+                periods.add(10);
             }
             else
             {
@@ -104,6 +105,7 @@ public class BookRoom extends AppCompatActivity {
                 periods.add(7);
                 periods.add(8);
                 periods.add(9);
+                periods.add(10);
             }
             StringRequest request = new StringRequest(Request.Method.POST, Constants.BOOKROOM_URL, new Response.Listener<String>() {
             @Override
@@ -112,7 +114,6 @@ public class BookRoom extends AppCompatActivity {
                     dialog.dismiss();
                 if(listOfPeriods!=null)
                     listOfPeriods.clear();
-                //Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
                 System.out.println("get book room data Response is : " + response.toString());
                 String[] p  = response.split(";");
                 for (String s : p) {

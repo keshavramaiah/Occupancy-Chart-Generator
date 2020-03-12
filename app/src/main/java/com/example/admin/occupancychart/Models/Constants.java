@@ -17,6 +17,8 @@ public class Constants {
     public  static final String BOOKROOM_URL = DB_URL + "bookroom.php";
     public  static final String CONFIRMROOM_URL = DB_URL + "ConfirmRoom.php";
     public  static final String CLEARTEMP_URL = DB_URL + "cleartemp.php";
+    public  static final String EXTRACLASSES_URL = DB_URL + "getExtraClasses.php";
+    public  static final String CANCELCLASSES_URL = DB_URL + "cancelClass.php";
     public  static final String KEY_NAME = "name";
     public  static final String KEY_ROOM = "Room";
     public  static final String KEY_EMAIL = "email";

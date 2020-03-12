@@ -41,7 +41,7 @@ public class StudentHome extends AppCompatActivity {
     private PeriodAdapter periodAdapter;
     private RecyclerView recyclerView;
     private String roll;
-    private String[] times = new String[]{"0","8:40am-9:30am","9:30am-10:20am","10:20am-11:10am","11:20am-12:10pm","12:10pm-1:00pm","2:00pm-2:50pm","2:50pm-3:40pm","3:40pm-4:30pm"};
+    private String[] times = new String[]{"0","8:40am-9:30am","9:30am-10:20am","10:20am-11:10am","11:20am-12:10pm","12:10pm-1:00pm","1:00pm-2:00pm","2:00pm-2:50pm","2:50pm-3:40pm","3:40pm-4:30pm","4:30pm-5:30pm"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +52,7 @@ public class StudentHome extends AppCompatActivity {
         recyclerView = findViewById(R.id.PeriodRecycler);
         dialog= new ProgressDialog(StudentHome.this);
         day = calendar.get(Calendar.DAY_OF_WEEK)-2;
+        System.out.println("Day is " + day);
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode;
         roll=pref.getString("ROLL",null);
         System.out.println("Roll is " + roll);
@@ -127,7 +128,6 @@ public class StudentHome extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
                 System.out.println("Error is " + error.toString());
-                //progressBar.setVisibility(View.INVISIBLE);
             }
         })
         {
@@ -145,7 +145,7 @@ public class StudentHome extends AppCompatActivity {
     }
 
     private void dispadapter(ArrayList<Period> listperiods) {
-        periodAdapter = new PeriodAdapter(getApplicationContext(),listperiods);
+        periodAdapter = new PeriodAdapter(getApplicationContext(),listperiods,false);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(periodAdapter);
         periodAdapter.notifyDataSetChanged();

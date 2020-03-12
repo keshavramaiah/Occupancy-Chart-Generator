@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/colorPrimaryDark"
     android:layout_height="match_parent"
     tools:context=".Activities.RoomActivity">
   <Spinner
@@ -24,62 +25,27 @@
       android:layout_below="@+id/s2"
       >
   </Spinner>
+
   <com.github.mikephil.charting.charts.LineChart
-      android:layout_below="@+id/s3"
       android:id="@+id/chart1"
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_above="@+id/seekBar1" />
-
-  <SeekBar
-      android:id="@+id/seekBar2"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_alignParentBottom="true"
-      android:layout_alignParentLeft="true"
-      android:layout_margin="8dp"
-      android:layout_toLeftOf="@+id/tvYMax"
-      android:layout_marginRight="5dp"
-      android:max="150"
-      android:paddingBottom="12dp" />
-
-  <SeekBar
-      android:id="@+id/seekBar1"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_above="@+id/seekBar2"
-      android:layout_margin="8dp"
-      android:layout_marginBottom="35dp"
-      android:layout_toLeftOf="@+id/tvXMax"
-      android:layout_marginRight="5dp"
-      android:max="500"
-      android:paddingBottom="12dp" />
-
-  <TextView
-      android:id="@+id/tvXMax"
-      android:layout_width="50dp"
-      android:layout_height="wrap_content"
-      android:layout_alignBottom="@+id/seekBar1"
-      android:layout_alignParentRight="true"
-      android:text="@string/dash"
-      android:layout_marginBottom="15dp"
-      android:layout_marginRight="10dp"
-      android:gravity="right"
-      android:textAppearance="?android:attr/textAppearanceMedium" />
-
-  <TextView
-      android:id="@+id/tvYMax"
-      android:layout_width="50dp"
-      android:layout_height="wrap_content"
-      android:layout_alignBottom="@+id/seekBar2"
-      android:layout_alignParentRight="true"
-      android:text="@string/dash"
-      android:layout_marginBottom="15dp"
-      android:layout_marginRight="10dp"
-      android:gravity="right"
-      android:textAppearance="?android:attr/textAppearanceMedium" />
-
-
-
-
+      android:layout_height="400dp"
+      android:layout_below="@+id/s3"
+      android:layout_marginTop="0dp" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/ExtraClassesText"
+    android:textColor="#FFFFFF"
+    android:text="Extra classes beyond 4"
+    android:layout_below="@id/chart1"
+    android:layout_margin="20dp"
+    android:layout_centerHorizontal="true"
+    android:textSize="20sp"
+    android:textStyle="bold"/>
+<ListView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/ExtraClassesText"
+    android:id="@+id/ExtraClassesList"/>
 </RelativeLayout>

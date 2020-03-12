@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.PhilJay:MPAndroidChart:v3.1.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/MPAndroidChart-v3.1.0.aar/6dd5bb40e07d5b9b45739c56ebe81026/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/MPAndroidChart-v3.1.0.aar/6dd5bb40e07d5b9b45739c56ebe81026/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/MPAndroidChart-v3.1.0.aar/26b22f52ca07e5c81d0c325a1f8ffff9/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/MPAndroidChart-v3.1.0.aar/26b22f52ca07e5c81d0c325a1f8ffff9/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
