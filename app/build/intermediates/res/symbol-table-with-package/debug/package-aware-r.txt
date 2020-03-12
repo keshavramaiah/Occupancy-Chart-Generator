@@ -1021,7 +1021,6 @@ id SignUpBtn
 id SignupProgress
 id StudentSelect
 id TeacherBookRoomBtn
-id TeacherCancelClassBtn
 id TeacherRecycler
 id TeacherSelect
 id Temp

@@ -15,7 +15,7 @@ public class RegisterTest {
         String conpassword =  "123456";
         Boolean expected = true;
         Register registerobj = new Register();
-        //boolean output = registerobj.validate(name,rollno,email,password,conpassword);
-        //assertEquals(expected,output);
+        boolean output = registerobj.validate(name,rollno,email,password,conpassword);
+        assertEquals(expected,output);
     }
 }

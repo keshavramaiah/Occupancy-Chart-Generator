@@ -165,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
         {
             entries.add(new PieEntry(Integer.valueOf(1),listOfPeriods.get(i).getTitle()));
         }
+        entries.add(new PieEntry((9-Integer.valueOf(listOfPeriods.size())),"Free Hour"));
 
 
         PieDataSet dataSet = new PieDataSet(entries, "Periods");
@@ -179,13 +180,15 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Integer> colors = new ArrayList<>();
 
-        for (int c : ColorTemplate.VORDIPLOM_COLORS)
-            colors.add(c);
+
 
         for (int c : ColorTemplate.JOYFUL_COLORS)
             colors.add(c);
 
         for (int c : ColorTemplate.COLORFUL_COLORS)
+            colors.add(c);
+
+        for (int c : ColorTemplate.VORDIPLOM_COLORS)
             colors.add(c);
 
         for (int c : ColorTemplate.LIBERTY_COLORS)
@@ -220,10 +223,12 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 if (dialog.isShowing())
                     dialog.dismiss();
+                Log.d("Print",response.toString());
                 System.out.println("Teacher Response is : " + response);
                 listOfPeriods = new ArrayList<>();
                 if(response.length()>5) {
                     rep = response.split("@");
+                    //Log.d("Print",String.valueOf(rep.length));
                     String[] classrooms = new String[rep.length];
                     for (int i = 0; i < rep.length; i++) {
                         if (rep[i].length() >= 5) {

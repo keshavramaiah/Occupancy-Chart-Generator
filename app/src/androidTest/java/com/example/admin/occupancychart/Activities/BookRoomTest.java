@@ -45,7 +45,6 @@ import static org.junit.Assert.assertEquals;
 public class BookRoomTest {
 
     @Rule
-    public ActivityTestRule<Login> mActivityRule = new ActivityTestRule<>(
-            Login.class);
+    public ActivityTestRule<Login> mActivityRule = new ActivityTestRule<>(Login.class);
 
 }

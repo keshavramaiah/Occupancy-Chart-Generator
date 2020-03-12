@@ -138,19 +138,19 @@ public class Register extends AppCompatActivity {
 
             if (email.contains("@")) {
                 if (password.equals(confirmpassword)) {
-                    signup.setEnabled(false);
+                    //signup.setEnabled(false);
                     return true;
 
                 }else {
                     Toast.makeText(getApplicationContext(), "Passwords don't match", Toast.LENGTH_SHORT).show();
-                    passwordedit.requestFocus();
+                    //passwordedit.requestFocus();
                     return false;
                 }
             }
             else
             {
                 Toast.makeText(getApplicationContext(), "Please enter a valid email id", Toast.LENGTH_SHORT).show();
-                emailedit.requestFocus();
+                //emailedit.requestFocus();
                 return false;
             }
         }else {

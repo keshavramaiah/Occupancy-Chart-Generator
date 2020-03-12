@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -78,6 +79,7 @@ cancel.setOnClickListener(new View.OnClickListener() {
         StringRequest request = new StringRequest(Request.Method.POST, Constants.CANCELCLASSES_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                Log.d("Test",response);
                 System.out.println("Response is " + response);
                 if (dialog.isShowing()) {
                     dialog.dismiss();

@@ -1,182 +1,182 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
-MERGED from [com.android.support:design:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\d0e2951fccd101c04315a44dbd357734\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\cf782968b693aa34a1a5222a7b9a5072\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\5612b213180278a51411d9561c14f6af\AndroidManifest.xml:2:1-11:12
-MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\MPAndroidChart-v3.1.0.aar\26b22f52ca07e5c81d0c325a1f8ffff9\AndroidManifest.xml:2:1-20:12
-MERGED from [com.android.volley:volley:1.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\e2745004982119f6b98c0fdbc0c060c5\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\6cc9f639a050a2806f74731e031be9ff\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\41475d91faa27049426c7312955898bf\AndroidManifest.xml:17:1-22:12
-MERGED from [com.facebook.shimmer:shimmer:0.4.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\shimmer-0.4.0.aar\ef889d618a72cdbad206fb92b5ecf61a\AndroidManifest.xml:2:1-7:12
-MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\glide-4.9.0.aar\a7f5c5980182f3b4b9df0f4d369ea057\AndroidManifest.xml:2:1-12:12
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\0820b132c590dfdfa1d3f91dacc2d5d8\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\3773ee7c2fcfdff8bdf7cd4a6c471889\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\59ce51a07f5d62c2ebfa2aabf1fa9043\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\6089fcf115a4194ea438bdfb06304972\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\f4b6f14483e82120b2cc93cf44266d16\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\6a56a60e662f8b72861da5e65cb54b61\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\9f30755079744ce3db9f2948da06cd34\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\e330acc4f017e384768d4292a8e6f968\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\7079d281d656898c9b82030d5ad6043e\AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.9.0.aar\a559a15601106226d9645f59b602d7e8\AndroidManifest.xml:2:1-11:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\81a46f733c914d50d56dd8bfe9c0768a\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\eed87b37f23a0fdfacab0f6bbfea7c42\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\93f2054de9c602a6a5f6fbc92e7940f7\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\91842e52d47fad8de33ec949cc2ebee0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\656df94718915a5aa39b8be3f38c5326\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\754eb1eff1021fd741894134ff1b006a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\b67a17737f19f4170340d31e5e7dfc79\AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\MPAndroidChart-v3.1.0.aar\1a866b6bd50e59e9ceff03da0056371c\AndroidManifest.xml:2:1-20:12
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\9936b842dd052965598309499e3d4808\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\434bfc529293f52b10b8fe10ae802539\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\3e86b86d20be410f1364f3cde9c1ab4c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.shimmer:shimmer:0.4.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\shimmer-0.4.0.aar\b8c42a472018b9402b175ccf20491115\AndroidManifest.xml:2:1-7:12
+MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\glide-4.9.0.aar\922f7a4df9d329fad225452fcd48d743\AndroidManifest.xml:2:1-12:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\89cb2cd42bf1a9b466f02549e912fe42\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\c91d585772dac979893bf13a84fde22f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\c167becca935b910571f3b147f047aba\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\67490d608c697797f84b4aa8342fd093\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\bec02046bfff502a825b6d26aabc174d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b121a37327c17afa69cfc3fdab22b6b1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\add6194cdf2fe469dab3c2660d79ffa9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\7030b70dc749445f08d2711f4941d5ef\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\08def031423f6179020b3dc50df67046\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.9.0.aar\5d58a699c002915ada4ff0a4bd810fe6\AndroidManifest.xml:2:1-11:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\e7e6975cf27fbe702f190a760dd30d3e\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\0c416fed4e127cf89e341fd40c6b3823\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\d181986d5a15226a58a6b165660b8cae\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\103287a620b67681b519c20f6ff0f6fc\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
 	package
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:3:5-47
-		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:3:5-47
+		INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
-		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
+		INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
-		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:1-32:12
+		INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:5:5-67
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:7:5-30:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\5612b213180278a51411d9561c14f6af\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\5612b213180278a51411d9561c14f6af\AndroidManifest.xml:9:5-20
-MERGED from [com.android.volley:volley:1.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\e2745004982119f6b98c0fdbc0c060c5\AndroidManifest.xml:9:5-20
-MERGED from [com.android.volley:volley:1.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\e2745004982119f6b98c0fdbc0c060c5\AndroidManifest.xml:9:5-20
-MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\glide-4.9.0.aar\a7f5c5980182f3b4b9df0f4d369ea057\AndroidManifest.xml:10:5-20
-MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\glide-4.9.0.aar\a7f5c5980182f3b4b9df0f4d369ea057\AndroidManifest.xml:10:5-20
-MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.9.0.aar\a559a15601106226d9645f59b602d7e8\AndroidManifest.xml:9:5-20
-MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.9.0.aar\a559a15601106226d9645f59b602d7e8\AndroidManifest.xml:9:5-20
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:7:5-30:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\b67a17737f19f4170340d31e5e7dfc79\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\b67a17737f19f4170340d31e5e7dfc79\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\9936b842dd052965598309499e3d4808\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\9936b842dd052965598309499e3d4808\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\glide-4.9.0.aar\922f7a4df9d329fad225452fcd48d743\AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\glide-4.9.0.aar\922f7a4df9d329fad225452fcd48d743\AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.9.0.aar\5d58a699c002915ada4ff0a4bd810fe6\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.9.0.aar\5d58a699c002915ada4ff0a4bd810fe6\AndroidManifest.xml:9:5-20
 	android:supportsRtl
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:10:9-41
 	android:roundIcon
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:11:9-54
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:11:9-54
 	android:icon
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:9:9-43
 	android:allowBackup
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:13:9-40
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:13:9-40
 activity#com.example.admin.occupancychart.Activities.CancelClass
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:14:9-69
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:14:9-69
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:14:19-57
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:14:19-57
 activity#com.example.admin.occupancychart.Activities.BookConfirm
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:15:9-60
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:15:9-60
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:15:19-57
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:15:19-57
 activity#com.example.admin.occupancychart.Activities.BookRoom
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:16:9-57
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:16:9-57
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:16:19-54
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:16:19-54
 activity#com.example.admin.occupancychart.Activities.MyMarkerView
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:17:9-61
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:17:9-61
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:17:19-58
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:17:19-58
 activity#com.example.admin.occupancychart.Activities.RoomActivity
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:18:9-61
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:18:9-61
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:18:19-58
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:18:19-58
 activity#com.example.admin.occupancychart.Activities.InChargeHome
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:19:9-61
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:19:9-61
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:19:19-58
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:19:19-58
 activity#com.example.admin.occupancychart.Activities.StudentHome
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:20:9-60
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:20:9-60
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:20:19-57
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:20:19-57
 activity#com.example.admin.occupancychart.Activities.MainActivity
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:21:9-61
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:21:9-61
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:21:19-58
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:21:19-58
 activity#com.example.admin.occupancychart.Activities.Register
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:22:9-57
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:22:9-57
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:22:19-54
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:22:19-54
 activity#com.example.admin.occupancychart.Activities.Login
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:23:9-29:20
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:23:9-29:20
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:23:19-51
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:23:19-51
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:24:13-28:29
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:24:13-28:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:25:17-69
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:25:25-66
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:27:17-77
+ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:27:17-77
 	android:name
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:27:27-74
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml:27:27-74
 uses-sdk
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:design:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\d0e2951fccd101c04315a44dbd357734\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\d0e2951fccd101c04315a44dbd357734\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\cf782968b693aa34a1a5222a7b9a5072\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\cf782968b693aa34a1a5222a7b9a5072\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\5612b213180278a51411d9561c14f6af\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\5612b213180278a51411d9561c14f6af\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\MPAndroidChart-v3.1.0.aar\26b22f52ca07e5c81d0c325a1f8ffff9\AndroidManifest.xml:16:5-18:41
-MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\MPAndroidChart-v3.1.0.aar\26b22f52ca07e5c81d0c325a1f8ffff9\AndroidManifest.xml:16:5-18:41
-MERGED from [com.android.volley:volley:1.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\e2745004982119f6b98c0fdbc0c060c5\AndroidManifest.xml:7:5-43
-MERGED from [com.android.volley:volley:1.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\e2745004982119f6b98c0fdbc0c060c5\AndroidManifest.xml:7:5-43
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\6cc9f639a050a2806f74731e031be9ff\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\6cc9f639a050a2806f74731e031be9ff\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\41475d91faa27049426c7312955898bf\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\41475d91faa27049426c7312955898bf\AndroidManifest.xml:20:5-44
-MERGED from [com.facebook.shimmer:shimmer:0.4.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\shimmer-0.4.0.aar\ef889d618a72cdbad206fb92b5ecf61a\AndroidManifest.xml:5:5-44
-MERGED from [com.facebook.shimmer:shimmer:0.4.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\shimmer-0.4.0.aar\ef889d618a72cdbad206fb92b5ecf61a\AndroidManifest.xml:5:5-44
-MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\glide-4.9.0.aar\a7f5c5980182f3b4b9df0f4d369ea057\AndroidManifest.xml:6:5-8:41
-MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\glide-4.9.0.aar\a7f5c5980182f3b4b9df0f4d369ea057\AndroidManifest.xml:6:5-8:41
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\0820b132c590dfdfa1d3f91dacc2d5d8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\0820b132c590dfdfa1d3f91dacc2d5d8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\3773ee7c2fcfdff8bdf7cd4a6c471889\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\3773ee7c2fcfdff8bdf7cd4a6c471889\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\59ce51a07f5d62c2ebfa2aabf1fa9043\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\59ce51a07f5d62c2ebfa2aabf1fa9043\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\6089fcf115a4194ea438bdfb06304972\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\6089fcf115a4194ea438bdfb06304972\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\f4b6f14483e82120b2cc93cf44266d16\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\f4b6f14483e82120b2cc93cf44266d16\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\6a56a60e662f8b72861da5e65cb54b61\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\6a56a60e662f8b72861da5e65cb54b61\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\9f30755079744ce3db9f2948da06cd34\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\9f30755079744ce3db9f2948da06cd34\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\e330acc4f017e384768d4292a8e6f968\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\e330acc4f017e384768d4292a8e6f968\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\7079d281d656898c9b82030d5ad6043e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\7079d281d656898c9b82030d5ad6043e\AndroidManifest.xml:20:5-44
-MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.9.0.aar\a559a15601106226d9645f59b602d7e8\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.9.0.aar\a559a15601106226d9645f59b602d7e8\AndroidManifest.xml:5:5-7:41
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\81a46f733c914d50d56dd8bfe9c0768a\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\81a46f733c914d50d56dd8bfe9c0768a\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\eed87b37f23a0fdfacab0f6bbfea7c42\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\eed87b37f23a0fdfacab0f6bbfea7c42\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\93f2054de9c602a6a5f6fbc92e7940f7\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\93f2054de9c602a6a5f6fbc92e7940f7\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\91842e52d47fad8de33ec949cc2ebee0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\achut\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\91842e52d47fad8de33ec949cc2ebee0\AndroidManifest.xml:20:5-44
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\656df94718915a5aa39b8be3f38c5326\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\656df94718915a5aa39b8be3f38c5326\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\754eb1eff1021fd741894134ff1b006a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\754eb1eff1021fd741894134ff1b006a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\b67a17737f19f4170340d31e5e7dfc79\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\b67a17737f19f4170340d31e5e7dfc79\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\MPAndroidChart-v3.1.0.aar\1a866b6bd50e59e9ceff03da0056371c\AndroidManifest.xml:16:5-18:41
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\MPAndroidChart-v3.1.0.aar\1a866b6bd50e59e9ceff03da0056371c\AndroidManifest.xml:16:5-18:41
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\9936b842dd052965598309499e3d4808\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\9936b842dd052965598309499e3d4808\AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\434bfc529293f52b10b8fe10ae802539\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\434bfc529293f52b10b8fe10ae802539\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\3e86b86d20be410f1364f3cde9c1ab4c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\3e86b86d20be410f1364f3cde9c1ab4c\AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.shimmer:shimmer:0.4.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\shimmer-0.4.0.aar\b8c42a472018b9402b175ccf20491115\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.shimmer:shimmer:0.4.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\shimmer-0.4.0.aar\b8c42a472018b9402b175ccf20491115\AndroidManifest.xml:5:5-44
+MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\glide-4.9.0.aar\922f7a4df9d329fad225452fcd48d743\AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\glide-4.9.0.aar\922f7a4df9d329fad225452fcd48d743\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\89cb2cd42bf1a9b466f02549e912fe42\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\89cb2cd42bf1a9b466f02549e912fe42\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\c91d585772dac979893bf13a84fde22f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\c91d585772dac979893bf13a84fde22f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\c167becca935b910571f3b147f047aba\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\c167becca935b910571f3b147f047aba\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\67490d608c697797f84b4aa8342fd093\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\67490d608c697797f84b4aa8342fd093\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\bec02046bfff502a825b6d26aabc174d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\bec02046bfff502a825b6d26aabc174d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b121a37327c17afa69cfc3fdab22b6b1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b121a37327c17afa69cfc3fdab22b6b1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\add6194cdf2fe469dab3c2660d79ffa9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\add6194cdf2fe469dab3c2660d79ffa9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\7030b70dc749445f08d2711f4941d5ef\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\7030b70dc749445f08d2711f4941d5ef\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\08def031423f6179020b3dc50df67046\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\08def031423f6179020b3dc50df67046\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.9.0.aar\5d58a699c002915ada4ff0a4bd810fe6\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.9.0.aar\5d58a699c002915ada4ff0a4bd810fe6\AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\e7e6975cf27fbe702f190a760dd30d3e\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\e7e6975cf27fbe702f190a760dd30d3e\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\0c416fed4e127cf89e341fd40c6b3823\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\0c416fed4e127cf89e341fd40c6b3823\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\d181986d5a15226a58a6b165660b8cae\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\d181986d5a15226a58a6b165660b8cae\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\103287a620b67681b519c20f6ff0f6fc\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Admin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\103287a620b67681b519c20f6ff0f6fc\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\achut\StudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Admin\AndroidStudioProjects\Occupancy-Chart-Generator\app\src\main\AndroidManifest.xml

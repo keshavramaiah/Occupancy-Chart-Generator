@@ -3,6 +3,7 @@ package com.example.admin.occupancychart.Activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -55,7 +56,8 @@ private Button cancel,confirm;
         StringRequest request = new StringRequest(Request.Method.POST, Constants.CONFIRMROOM_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                System.out.println("Response is " + response);
+                //System.out.println("Response is " + response);
+                Log.d("Test",response);
             }
         }, new Response.ErrorListener() {
             @Override
