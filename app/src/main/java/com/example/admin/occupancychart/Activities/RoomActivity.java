@@ -168,9 +168,6 @@ public class RoomActivity extends AppCompatActivity implements OnChartValueSelec
 
         setTitle("LineChartActivity1");
 
-
-
-
         {
             chart = findViewById(R.id.chart1);
             chart.setVisibility(View.GONE);

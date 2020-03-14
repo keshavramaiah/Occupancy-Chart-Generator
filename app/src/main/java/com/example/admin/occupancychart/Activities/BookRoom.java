@@ -46,7 +46,7 @@ public class BookRoom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_room);
         Calendar calendar = Calendar.getInstance();
-        day = calendar.get(Calendar.DAY_OF_WEEK)-1;
+        day = 5;//calendar.get(Calendar.DAY_OF_WEEK)-1;
         periods = new ArrayList<>();
         listOfPeriods = new ArrayList<>();
 

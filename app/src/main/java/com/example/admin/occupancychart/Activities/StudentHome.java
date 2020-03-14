@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -33,6 +34,7 @@ import static java.security.AccessController.getContext;
 
 public class StudentHome extends AppCompatActivity {
     private int day;
+    private SwipeRefreshLayout swipeRefreshLayout;
     private FloatingActionButton fab;
     private ProgressDialog dialog;
     private SharedPreferences pref ;
@@ -51,11 +53,12 @@ public class StudentHome extends AppCompatActivity {
         listOfPeriods=new ArrayList<>();
         recyclerView = findViewById(R.id.PeriodRecycler);
         dialog= new ProgressDialog(StudentHome.this);
-        day = calendar.get(Calendar.DAY_OF_WEEK)-2;
-        System.out.println("Day is " + day);
+        day = 5 ;//calendar.get(Calendar.DAY_OF_WEEK)-1;
+        System.out.println("Day is " + (calendar.get(Calendar.DAY_OF_WEEK)-1));
         pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode;
         roll=pref.getString("ROLL",null);
         System.out.println("Roll is " + roll);
+        swipeRefreshLayout = findViewById(R.id.SwipeRefresh);
         if(roll==null)
         {
             Toast.makeText(getApplicationContext(),"Registration error,please register again",Toast.LENGTH_SHORT).show();
@@ -70,27 +73,39 @@ public class StudentHome extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),BookRoom.class));
             }
         });
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getData();
+            }
+        });
     }
 
     public void getData()
     {
-        dialog.setMessage("Getting data, please wait.");
-        dialog.show();
+       swipeRefreshLayout.setRefreshing(true);
 
         StringRequest request = new StringRequest(Request.Method.POST, Constants.STUDENTDATA_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                if (dialog.isShowing())
-                    dialog.dismiss();
-
-
+//                if (dialog.isShowing())
+//                    dialog.dismiss();
+                swipeRefreshLayout.setRefreshing(false);
+                if(listOfPeriods!=null)
+                {
+                    listOfPeriods.clear();
+                }
                 String rep =  response.toString();
                 System.out.println("Rep length" + rep.length());
                 String cr = rep.substring(0,1);
+                System.out.println(cr);
                 if(cr.equals("1"))
                 {
                     fab.setVisibility(View.VISIBLE);
                 }
+                else
+                    fab.setVisibility(View.GONE);
                System.out.println("Response is " + rep);
                 if(rep.length()==5)
                     Toast.makeText(getApplicationContext(),"No classes today",Toast.LENGTH_SHORT).show();

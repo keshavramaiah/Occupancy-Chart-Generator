@@ -11,6 +11,7 @@ import android.icu.text.UnicodeSetSpanner;
 import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     private PieChart chart;
     private SharedPreferences pref ;
     private SharedPreferences.Editor editor ;
+    private SwipeRefreshLayout swipeRefreshLayout;
     private ArrayList<Period>listOfPeriods;
     private ProgressDialog dialog;
     private String name;
@@ -73,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Calendar calendar = Calendar.getInstance();
+       // swipeRefreshLayout = findViewById(R.id.swipe);
         dialog= new ProgressDialog(MainActivity.this);
-        //day = calendar.get(Calendar.DAY_OF_WEEK)-1;
-        day =  5;
+        day =  5; // calendar.get(Calendar.DAY_OF_WEEK)-1;
         System.out.println("Day is " + day);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -139,6 +141,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),BookRoom.class));
             }
         });
+//        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                getData();
+//            }
+//        });
 
     }
 
@@ -165,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
         {
             entries.add(new PieEntry(Integer.valueOf(1),listOfPeriods.get(i).getTitle()));
         }
+        entries.add(new PieEntry((9-Integer.valueOf(listOfPeriods.size())),"Free Hour"));
 
 
         PieDataSet dataSet = new PieDataSet(entries, "Periods");
@@ -179,13 +188,15 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Integer> colors = new ArrayList<>();
 
-        for (int c : ColorTemplate.VORDIPLOM_COLORS)
-            colors.add(c);
+
 
         for (int c : ColorTemplate.JOYFUL_COLORS)
             colors.add(c);
 
         for (int c : ColorTemplate.COLORFUL_COLORS)
+            colors.add(c);
+
+        for (int c : ColorTemplate.VORDIPLOM_COLORS)
             colors.add(c);
 
         for (int c : ColorTemplate.LIBERTY_COLORS)
@@ -213,13 +224,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getData() {
-
+       // swipeRefreshLayout.setRefreshing(true);
 
         StringRequest request = new StringRequest(Request.Method.POST, Constants.TEACHERDATA_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                if (dialog.isShowing())
-                    dialog.dismiss();
+               // swipeRefreshLayout.setRefreshing(false);
                 System.out.println("Teacher Response is : " + response);
                 listOfPeriods = new ArrayList<>();
                 if(response.length()>5) {
