@@ -634,6 +634,7 @@ color misty_rose
 color moccasin
 color navajo_white
 color navy
+color newback
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
@@ -969,6 +970,7 @@ drawable ic_add_white_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_remove_black_24dp
+drawable incharge
 drawable loginbutton_selector
 drawable navigation_empty_icon
 drawable notification_action_background
@@ -985,6 +987,8 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable password
 drawable phone
+drawable student
+drawable teacher
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable user
@@ -1021,7 +1025,6 @@ id SignUpBtn
 id SignupProgress
 id StudentSelect
 id TeacherBookRoomBtn
-id TeacherCancelClassBtn
 id TeacherRecycler
 id TeacherSelect
 id Temp
@@ -1216,6 +1219,7 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textView
 id text_input_password_toggle
 id textinput_counter
 id textinput_error

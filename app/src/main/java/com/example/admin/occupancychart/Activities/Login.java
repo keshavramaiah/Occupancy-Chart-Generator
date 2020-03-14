@@ -39,6 +39,7 @@ public class Login extends AppCompatActivity {
     private AnimationDrawable animationDrawable;
     private ConstraintLayout constraintLayout;
     private String status;
+    boolean t = false;
     private int type;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +89,21 @@ public class Login extends AppCompatActivity {
 
 
 
+            }
+        });
+        loginbtn.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                    if(!t) {
+                        temp.setVisibility(View.VISIBLE);
+                        t = !t;
+                    }
+                    else
+                    {
+                        temp.setVisibility(View.GONE);
+                        t = !t;
+                    }
+                    return true;
             }
         });
         register.setOnClickListener(new View.OnClickListener() {

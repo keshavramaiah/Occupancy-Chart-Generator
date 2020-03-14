@@ -6,18 +6,10 @@
     android:layout_height="fill_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@color/background_color"
+    android:background="#344955"
     android:padding="20dp"
     tools:context=".Activities.Register">
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="@string/signUp"
-        android:textColor="@color/white_greyish"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,14 +26,15 @@
             android:layout_margin="10dp"
             android:id="@+id/StudentSelect"
             android:text="Student"/>
+
         <TextView
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
             android:layout_gravity="center"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:gravity="center"
-            android:background="@color/background_color"
+            android:background="#344955"
             android:id="@+id/TeacherSelect"
             android:text="Teacher"/>
 
@@ -50,9 +43,9 @@
             android:layout_height="40dp"
             android:layout_margin="10dp"
             android:layout_gravity="center"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:gravity="center"
-            android:background="@color/background_color"
+            android:background="#344955"
             android:id="@+id/InChargeSelect"
             android:text="In-Charge"/>
 
@@ -120,17 +113,6 @@
         android:layout_height="1px"
         android:background="@color/white_greyish" />
 
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1px"
-        android:background="@color/white_greyish" />
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1px"
-        android:background="@color/white_greyish" />
-
     <EditText
         android:id="@+id/PasswordEdit"
         android:layout_width="fill_parent"
@@ -169,19 +151,22 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="16sp" />
-
-
-
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white_greyish" />
 
     <Button
         android:id="@+id/SignUpBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="@string/signUp"
-        android:padding="3dp"
         android:background="@drawable/loginbutton_selector"
-        android:textColor="@color/background_color"
+        android:fontFamily="monospace"
+        android:padding="3dp"
+        android:text="@string/signUp"
+        android:textColor="#344955"
         android:textSize="17sp"
         android:textStyle="bold" />
 
@@ -191,16 +176,18 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
+        android:fontFamily="monospace"
         android:gravity="center"
         android:padding="10dp"
         android:text="@string/already_user"
         android:textColor="@color/white_greyish"
         android:textSize="15sp" />
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
 
+    <ProgressBar
+        android:id="@+id/SignupProgress"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:indeterminateTint="#FFFFFF"
-        android:id="@+id/SignupProgress"/>
+        android:indeterminateTint="#FFFFFF" />
 </LinearLayout>

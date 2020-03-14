@@ -90,8 +90,11 @@ public class Register extends AppCompatActivity {
                 teacherclick= false;
                 inchargeclick = false;
                 student.setBackgroundColor(getColor(R.color.white));
-                Teacher.setBackgroundColor(getColor(R.color.background_color));
-                Incharge.setBackgroundColor(getColor(R.color.background_color));
+                student.setTextColor(getColor(R.color.black));
+                Teacher.setTextColor(getColor(R.color.white));
+                Teacher.setBackgroundColor(getColor(R.color.newback));
+                Incharge.setTextColor(getColor(R.color.white));
+                Incharge.setBackgroundColor(getColor(R.color.newback));
             }
         });
 
@@ -105,8 +108,11 @@ public class Register extends AppCompatActivity {
                 studclick= false;
                 inchargeclick = false;
                 Teacher.setBackgroundColor(getColor(R.color.white));
-                student.setBackgroundColor(getColor(R.color.background_color));
-                Incharge.setBackgroundColor(getColor(R.color.background_color));
+                Teacher.setTextColor(getColor(R.color.black));
+                Incharge.setTextColor(getColor(R.color.white));
+                Incharge.setBackgroundColor(getColor(R.color.newback));
+                student.setTextColor(getColor(R.color.white));
+                student.setBackgroundColor(getColor(R.color.newback));
             }
         });
 
@@ -120,8 +126,11 @@ public class Register extends AppCompatActivity {
                 studclick = false;
                 teacherclick= false;
                 Incharge.setBackgroundColor(getColor(R.color.white));
-                Teacher.setBackgroundColor(getColor(R.color.background_color));
-                student.setBackgroundColor(getColor(R.color.background_color));
+                Incharge.setTextColor(getColor(R.color.black));
+                Teacher.setTextColor(getColor(R.color.white));
+                Teacher.setBackgroundColor(getColor(R.color.newback));
+                student.setTextColor(getColor(R.color.white));
+                student.setBackgroundColor(getColor(R.color.newback));
             }
         });
         alreadyuser.setOnClickListener(new View.OnClickListener() {
