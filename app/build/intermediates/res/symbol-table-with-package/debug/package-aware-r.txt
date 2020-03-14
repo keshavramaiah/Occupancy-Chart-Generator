@@ -994,7 +994,6 @@ drawable tooltip_frame_light
 drawable user
 drawable userlogo
 id ALT
-id BookClassCard
 id BookRoomRecycler
 id BookRoomSpinner
 id CTRL
@@ -1024,6 +1023,7 @@ id SYM
 id SignUpBtn
 id SignupProgress
 id StudentSelect
+id SwipeRefresh
 id TeacherBookRoomBtn
 id TeacherRecycler
 id TeacherSelect
@@ -1213,6 +1213,7 @@ id start
 id status_bar_latest_event_content
 id submenuarrow
 id submit_area
+id swipe
 id tabMode
 id tag_transition_group
 id text
