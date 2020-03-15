@@ -14,16 +14,17 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.admin.occupancychart.Models.Constants;
 import com.example.admin.occupancychart.Models.MySingleton;
-import com.example.admin.occupancychart.Models.Period;
 import com.example.admin.occupancychart.R;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class BookConfirm extends AppCompatActivity {
-private String room,day;
+private String room;
+private String day;
 private int period;
-private Button cancel,confirm;
+private Button cancel;
+private Button confirm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

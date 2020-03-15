@@ -7,19 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-
-import com.example.admin.occupancychart.Activities.BookConfirm;
 import com.example.admin.occupancychart.Activities.CancelClass;
 import com.example.admin.occupancychart.R;
 
 import java.util.ArrayList;
 
 public class PeriodAdapter extends RecyclerView.Adapter <PeriodAdapter.PeriodHolder>{
-    public Context context;
-    public static ArrayList<Period> periods;
-    boolean click = false;
+    private Context context;
+    private static ArrayList<Period> periods;
+    private boolean click = false;
 
 
     public PeriodAdapter(Context context, ArrayList<Period> periods,boolean click) {

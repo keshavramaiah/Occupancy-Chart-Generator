@@ -1,16 +1,11 @@
 package com.example.admin.occupancychart.Activities;
 
-import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.icu.text.UnicodeSetSpanner;
-import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,13 +16,8 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.SeekBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -43,7 +33,6 @@ import com.example.admin.occupancychart.R;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -59,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
     private PieChart chart;
     private SharedPreferences pref ;
-    private SharedPreferences.Editor editor ;
-    private SwipeRefreshLayout swipeRefreshLayout;
     private ArrayList<Period>listOfPeriods;
     private ProgressDialog dialog;
     private String name;
@@ -75,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Calendar calendar = Calendar.getInstance();
-       // swipeRefreshLayout = findViewById(R.id.swipe);
         dialog= new ProgressDialog(MainActivity.this);
         day =  5; // calendar.get(Calendar.DAY_OF_WEEK)-1;
         System.out.println("Day is " + day);
@@ -117,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
         chart.setDrawCenterText(true);
 
         chart.setRotationAngle(0);
-        // enable rotation of the chart by touch
         chart.setRotationEnabled(true);
         chart.setHighlightPerTapEnabled(true);
 
@@ -141,12 +126,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),BookRoom.class));
             }
         });
-//        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//            @Override
-//            public void onRefresh() {
-//                getData();
-//            }
-//        });
 
     }
 
@@ -162,12 +141,8 @@ public class MainActivity extends AppCompatActivity {
         return s;
     }
 
-//
-
     private void setData() {
         ArrayList<PieEntry> entries = new ArrayList<>();
-        // NOTE: The order of the entries when being added to the entries array determines their position around the center of
-        // the chart.
         Log.d("CHECK",rep.length+" ");
         for(int i=0;i<listOfPeriods.size();i++)
         {
@@ -224,12 +199,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getData() {
-       // swipeRefreshLayout.setRefreshing(true);
 
         StringRequest request = new StringRequest(Request.Method.POST, Constants.TEACHERDATA_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-               // swipeRefreshLayout.setRefreshing(false);
                 System.out.println("Teacher Response is : " + response);
                 listOfPeriods = new ArrayList<>();
                 if(response.length()>5) {

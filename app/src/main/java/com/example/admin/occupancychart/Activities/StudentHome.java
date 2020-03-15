@@ -89,8 +89,6 @@ public class StudentHome extends AppCompatActivity {
         StringRequest request = new StringRequest(Request.Method.POST, Constants.STUDENTDATA_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-//                if (dialog.isShowing())
-//                    dialog.dismiss();
                 swipeRefreshLayout.setRefreshing(false);
                 if(listOfPeriods!=null)
                 {
@@ -120,7 +118,6 @@ public class StudentHome extends AppCompatActivity {
                     rep = rep.substring(1);
                     String room = rep.substring(0,4);
                     rep = rep.substring(4);
-                   // Toast.makeText(getApplicationContext(),rep.toString(), Toast.LENGTH_LONG).show();
                     System.out.println(room);
                     String []r = rep.split(";");
                     String []temp;

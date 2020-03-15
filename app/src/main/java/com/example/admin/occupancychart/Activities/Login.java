@@ -28,10 +28,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Login extends AppCompatActivity {
-    private EditText loginedit,passwordedit;
-    private String email,password;
+    private EditText loginedit;
+    private EditText passwordedit;
+    private String email;
+    private String password;
     private TextView register;
-    private Button loginbtn,temp;
+    private Button loginbtn;
+    private Button temp;
     private ConstraintLayout mainLayout;
     private ProgressBar progressBar;
     private SharedPreferences pref ;

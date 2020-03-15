@@ -1,6 +1,4 @@
 package com.example.admin.occupancychart.Activities;
-
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

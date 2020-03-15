@@ -7,18 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 
 import com.example.admin.occupancychart.Activities.BookConfirm;
-import com.example.admin.occupancychart.Activities.BookRoom;
 import com.example.admin.occupancychart.R;
 
 import java.util.ArrayList;
 
 public class BookRoomAdapter extends RecyclerView.Adapter <BookRoomAdapter.BookRoomHolder>{
-    public Context context;
+    private Context context;
     ArrayList<Period> periods;
      ArrayList<Integer> periodNumbers;
      String room;

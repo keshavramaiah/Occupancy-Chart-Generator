@@ -20,9 +20,7 @@ import com.example.admin.occupancychart.Models.BookRoomAdapter;
 import com.example.admin.occupancychart.Models.Constants;
 import com.example.admin.occupancychart.Models.MySingleton;
 import com.example.admin.occupancychart.Models.Period;
-import com.example.admin.occupancychart.Models.PeriodAdapter;
 import com.example.admin.occupancychart.R;
-import com.github.mikephil.charting.data.Entry;
 
 import java.util.ArrayList;
 import java.util.Calendar;
